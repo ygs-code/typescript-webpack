@@ -1,0 +1,30 @@
+.main-box {
+    width: calc(100% - 48px);
+    margin: 24px 0 0 24px;
+    height: 88px;
+    background-color: #fff5e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px 0 16px;
+    border-radius: 8px;
+
+    .left-box {
+        display: flex;
+        align-items: center;
+        img {
+            width: 78px;
+            height: 76px;
+        }
+        span {
+            font-size: 18px;
+            font-weight: 400px;
+            margin-left: 16px;
+            color: #49505e;
+        }
+    }
+}
+
+.btn {
+    background-color: #d4a767;
+}

@@ -1,0 +1,48 @@
+.deposit-right-box {
+    width: 50%;
+    margin: 32px 0 0 32px;
+    display: flex;
+    flex-direction: column;
+    color: #1b222f;
+    .text-item {
+        .text-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #49505e;
+        }
+        li {
+            margin-top: 12px;
+            font-size: 14px;
+        }
+    }
+    
+    
+
+    /* .right-item:not(:first-child) {
+        margin-top: 40px;
+    }
+    .right-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .right-item-title {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .right-item-box {
+            display: flex;
+            margin-top: 24px;
+        }
+        .item-avg-time {
+            display: flex;
+            flex-direction: column;
+            .item-avg-time-span {
+                display: flex;
+                margin-top: 24px;
+            }
+        }
+        .item-avg-time:not(:first-child) {
+            margin-left: 24px;
+        }
+    } */
+}

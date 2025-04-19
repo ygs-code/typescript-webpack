@@ -1,0 +1,24 @@
+.main-box-top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 24px 0 24px;
+    .main-box-content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .welcome-span {
+        font-size: 24px;
+        font-weight: 500;
+        color: #1b222f;
+    }
+    .welcome-hr {
+        border-bottom: 1px solid #e3e3e4;
+        margin-top: 10px;
+    }
+    .welcome-btn {
+        padding-right: 24px;
+    }
+}

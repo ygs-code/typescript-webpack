@@ -1,0 +1,30 @@
+.language {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    
+  &-img {
+    width: 20px;
+    margin-top: 3px;
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+  }
+ 
+  
+  &-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+   
+    margin-right: 5px;
+  }
+  &-active {
+    background: black;
+  }
+}
+
+
+
+ 

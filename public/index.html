@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="/static/icon/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+
+  <meta name="Keywords" content="黄金交易, 期货交易, mt5交易, 股票交易">
+  <meta name="Description" content="用户中心网站描述">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+</head>
+<body>
+  <noscript> You need to enable JavaScript to run this app.</noscript>
+  <!-- <div>webpackName: <%= htmlWebpackPlugin.options.webpackName %></div> -->
+  <div id="root"></div>
+  <script>
+    window.addEventListener('load', function () {
+      window.main()
+    })
+  </script>
+</body>
+
+</html>

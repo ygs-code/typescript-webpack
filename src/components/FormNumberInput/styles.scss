@@ -1,0 +1,24 @@
+:global {
+  .percentage-input {
+    display: flex;
+    flex: 1;
+    .lz-component-form-input {
+      display: flex;
+      flex: 1;
+      .input-wrap{
+        display: flex;
+        flex: 1;
+        input{
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  .lz-component-form-input {
+    .input-suffix,
+    .input-prefix {
+      white-space: nowrap;
+    }
+  }
+}

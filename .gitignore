@@ -1,0 +1,11 @@
+node_modules
+dist 
+package-lock.json
+yarn.lock
+
+
+
+routePaths.js
+routesComponent.js
+src/router/routePaths.js
+src/router/routesComponent.js

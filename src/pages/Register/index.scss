@@ -1,0 +1,57 @@
+.log-in {
+
+  height: auto;
+  overflow-y: auto;
+
+  &-header {
+    position: relative;
+    z-index: 3;
+  }
+
+  .middle {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 64px);
+    position: relative;
+
+    >div:nth-child(1) {
+      flex: 1;
+
+
+      width: 100%;
+      height: auto;
+      min-height: 800px;
+
+
+
+      background: url("@/static/images/img1.webp") no-repeat center center;
+
+      background-size: cover;
+    }
+
+    >div:nth-child(2) {
+      min-width: 400px;
+      width: 40%;
+      position: relative;
+      min-height: 800px;
+
+
+      .form-box {
+
+ 
+        /* 使容器高度占满视口高度 */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+
+
+        .title {
+          font-size: 24px;
+          height: 50px;
+          line-height: 50px;
+        }
+      }
+    }
+  }
+}

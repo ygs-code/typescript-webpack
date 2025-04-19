@@ -1,0 +1,69 @@
+.order-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.order-main {
+    display: flex;
+    flex-direction: column;
+
+    padding: 32px 24px 0 24px;
+}
+.order-form {
+    display: flex;
+    flex-direction: column;
+    .order-form-span {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .order-form-select {
+        margin-top: 8px;
+        width: 482px;
+        height: 40px;
+    }
+}
+
+.order-filter {
+    display: flex;
+    margin-top: 32px;
+    .order-filter-item {
+        .order-filter-radio {
+            display: flex;
+            height: 40px;
+            align-items: center;
+            white-space: nowrap;
+        }
+        .order-filter-range-picker {
+            width: 274px;
+            height: 40px;
+        }
+    }
+    .order-filter-item:not(:first-child)  {
+        margin-left: 16px;
+    }
+    /* radio样式覆盖 */
+    .ant-radio-button-wrapper {
+        height: 40px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.order-table-box {
+    width: 100%;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 360px);
+    .order-table {
+        overflow-y: auto;
+        max-height: calc(100vh - 380px);
+    }
+    .order-pagination {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin: 24px 0;
+    }
+}

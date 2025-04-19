@@ -1,0 +1,15 @@
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-button {
+  display: flex;
+  width: 100%;
+  background-color: black;
+  height: 50px;
+  border-radius: 10px;
+}
+.login-button:hover {
+  background-color: #d4a767 !important;
+}

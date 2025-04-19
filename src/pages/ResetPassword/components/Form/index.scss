@@ -1,0 +1,21 @@
+.reset-password-form {
+    .span-cursor {
+        cursor: pointer;
+    }
+    .login-form{
+        &-account{
+            color: #49505e;
+            cursor: pointer;
+        }
+        &-account:hover{
+            color: #d4a767;
+        }
+        &-account-active{
+            color: #d4a767;
+        }
+    
+        &-line{
+            margin: 0 5px;
+        }
+    }
+}

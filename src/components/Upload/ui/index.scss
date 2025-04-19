@@ -1,0 +1,178 @@
+.multiple-file-upload {
+  .ant-upload-wrapper .ant-upload-drag .ant-upload {
+    padding: 0 !important;
+  }
+
+
+
+
+  .file-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px dashed #d9d9d9;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+
+    .img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+  }
+
+
+  .file-box:hover {
+    border-color: #d4a767;
+  }
+
+
+  .anticon {
+    color: white;
+  }
+
+  .item {
+    display: inline-flex;
+    flex: 1;
+    margin: 0 5px;
+  }
+
+  .ant-upload-wrapper {
+    display: flex;
+    flex: 1;
+  }
+
+  .upload-icon {
+    color: #ccc;
+    background: rgb(245, 247, 250);
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+
+    .text {
+      font-size: 14px;
+    }
+  }
+
+
+
+  .ant-upload-wrapper .ant-upload-drag p.ant-upload-drag-icon {
+    margin: 0;
+    padding: 0;
+    height: 100px;
+  }
+
+
+
+  .ant-upload-list-item-info {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+
+    display: flex;
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .ant-upload.ant-upload-select-picture-card {
+      width: 84px;
+      height: 84px;
+    }
+
+    .over-mask,
+    .mask {
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0.3;
+      position: absolute;
+      z-index: 5;
+      border-radius: 4px;
+      top: 0;
+      left: 0;
+    }
+
+    .over-mask {
+      display: none;
+    }
+
+
+
+    .over-icon,
+    .icon-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      z-index: 6;
+      opacity: 0.8;
+
+      i {
+
+        flex: 1;
+      }
+
+      .viwe-icon {
+        color: #ee9415;
+      }
+
+      .delete-icon {
+        color: red;
+      }
+    }
+
+    .icon-box {
+      display: flex;
+    }
+
+    .over-icon {
+      display: none;
+    }
+
+    .error{
+      display: block !important;
+      color: red;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 2;
+    font-size: 15px;
+    display: flex;
+
+    i {
+      color: red;
+    }
+  }
+
+  .ant-upload-list-item-info:hover {
+
+    .over-icon,
+    .over-mask,
+    .close {
+      display: flex;
+    }
+  }
+
+  .file-input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+}

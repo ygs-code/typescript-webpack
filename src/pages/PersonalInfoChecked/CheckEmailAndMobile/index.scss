@@ -1,0 +1,19 @@
+.check-email-and-mobile {
+    display: flex;
+    flex-direction: column;
+    .get-code-box {
+        display: flex;
+        .code-input-box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 16px;
+            .code-input-button {
+                display: flex;
+                .code-btn {
+                    margin-left: 16px;
+                }
+            }
+        }
+    }
+}

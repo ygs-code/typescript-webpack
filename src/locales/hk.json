@@ -1,0 +1,997 @@
+{
+  "Meta": {
+    "title": "RRBULL",
+    "description": "RRBULL."
+  },
+  "Request": {
+    "PleaseLogInAgain": "請重新登入",
+    "WrongRequestMethod": "請求方式錯誤",
+    "AccessDenied": "拒絕訪問",
+    "TheRequestAddressIsIncorrect": "請求地址有錯",
+    "ServerError": "服務器出錯",
+    "RequestErrorPleaseTryAgainLater": "請求出錯，請稍後再試"
+  },
+  "Routes": {
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "login": "Log in",
+    "signup": "Sign up",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "settings": "Settings",
+    "about": "About",
+    "products": "products",
+    "tools": "Tools",
+    "analysis": "Analysis",
+    "promote": "MT5",
+    "legal": "法律文件",
+    "supervision": "監管資質",
+    "contract": "合約細則",
+    "demoAccount": "模擬賬戶",
+    "announcement": "公告"
+  },
+  "Components": {
+    "Form": {
+      "Search": "搜尋",
+      "Reset": "重設",
+      "Close": "收起",
+      "Expand": "展開",
+      "AllDate": "所有時間"
+    },
+    "Table": {
+      "Total": "共",
+      "Items": "條"
+    },
+    "Upload": {
+      "UploadPictures": "上傳圖片"
+    },
+    "TermsPart": {
+      "AveragePaymentTime": "平均付款時間",
+      "Immediate": "即時",
+      "Commission": "佣金",
+      "HowToUsingNeteller": "點樣用 Neteller 出金？",
+      "ThingsToNote": "注意事項",
+      "KindTips": "溫馨提示",
+      "TheMinimumAmount": "單筆最低為100USDT；",
+      "TheMinimumAmountPerTransaction": "單筆最低為100USDT，最高為",
+      "USDT": "USDT；",
+      "TheTransferAmountMsg": "轉賬金額必須係扣除手續費後，等於該訂單嘅金額，否則將會導致無法到賬；",
+      "EachDepositMustBeResubmitted": "每次存款都需要重新提交，舊訂單地址無效，切勿重複使用；",
+      "OurCompanyIsNotResponsible": "如因輸入錯誤導致任何損失，或者到賬延遲導致嘅匯率變動，我司概唔負責；",
+      "PleaseDoNotSubmitDepositApplications": "請勿頻繁重複提交存款申請，以免被風控；",
+      "PleaseKeepScreenshotAfterEachTransferForBackup": "每次轉賬後請保留截圖，以作備用；",
+      "PleaseContactOurOnlineCustomerService": "如有問題，請您聯絡線上客服或者電郵至info@rrbullgold.com查詢；",
+      "TheMinimumWithdrawalAmountIsUSD20": "最低取款金額係 USD20.",
+      "TheBankCardUsedToWithdrawMoneyMustBeOwned": "取款嘅銀行卡必須為本人擁有，禁止第三方取款。",
+      "PleaseEnsureThatTheBankCardInformationIsCorrect": "請確保銀行卡資料正確，如因輸入錯誤而導致嘅任何損失，我司概唔負責。",
+      "ItIsRecommendedToSubmitWithdrawalApplication": "建議喺冇持倉嘅情況下先提交取款申請；",
+      "IfYouHoldPositionWhenWithdrawingFunds": "若取款時持有倉位，可提交嘅金額係未用保證金；",
+      "IfYouHaveAnyQuestionsPleaseContact": "如有問題，請您聯絡線上客服或者電郵至info@rrbullgold.com查詢；",
+      "DepositsMustBeMadeToOnesOwnAccount": "存款必須為本人賬戶，禁止第三方存款；",
+      "MinimumSingleTransactionAmountIs": "單筆最低為",
+      "RMBUpTo": "人民幣，最高為",
+      "RMB": "人民幣",
+      "DepositTimeIs": "存款時間為：",
+      "PleaseDoNotFillInAnyRemarksOrComments": "請勿填寫任何備註及附言；",
+      "TransfersMadeDuringTheEveningHoursOfWeekdays": "工作日嘅晚間或假期間嘅轉賬都可能延遲到賬，請預留足夠嘅時間處理；",
+      "TheWalletAddressForWithdrawalMustBeOwned": "請確保錢包地址正確，如因輸入錯誤而導致嘅任何損失，我司概唔負責；",
+      "WeMayNeedToAskDocumentsOfYourWallet": "我司可能需要向您索取錢包嘅實名相關證明文件；",
+      "PleaseMakeSureTheWalletAddressIsCorrect": "請確保錢包地址正確，如因輸入錯誤而導致嘅任何損失，我司概唔負責；"
+    },
+    "ModalConfirm": {
+      "Hint": "提示",
+      "CptInfo": "完善個人資料",
+      "Confirm": "確定",
+      "Cancel": "取消",
+      "PleaseCompletePersonalInformationMsg": "請先進行實名認證，完善個人資料",
+      "RegistrationSuccessful": "註冊成功"
+    },
+    "Menu": {
+      "Account": "帳戶",
+      "Wallet": "銀包",
+      "Deposit": "入金",
+      "Withdrawal": "出金",
+      "CardManage": "卡片管理",
+      "Report": "報表",
+      "TradingOrder": "交易訂單",
+      "DepositAndWithdrawalReport": "出入金報表",
+      "Setting": "設定",
+      "PersonalInfoWrite": "實名認證",
+      "ChangePassword": "更改密碼",
+      "LowerLevelCustomers": "下級客戶",
+      "CustomerList": "客戶列表",
+      "LastName": "姓氏",
+      "FirstName": "名字"
+    },
+    "DatePicker": {
+      "StartDate": "開始日期",
+      "EndDate": "結束日期"
+    },
+    "withSidebar": {
+      "ContentFooter": {
+        "message": "Some content for the footer."
+      },
+      "SidebarMobile": {
+        "sheet_trigger_aria_label": "Open Sidebar",
+        "sheet_content_aria_label": "Mobile Navigation"
+      }
+    },
+    "BadgeAdmin": {
+      "label": "Admin"
+    },
+    "ButtonLogin": {
+      "title": "登 錄"
+    },
+    "ButtonLogout": {
+      "title": "Log out"
+    },
+    "ButtonSignup": {
+      "title": "註 冊"
+    },
+    "FormContact": {
+      "alertDestructive": {
+        "title": "Oops! Something went wrong!",
+        "description": "Please try again"
+      },
+      "alertSuccess": {
+        "title": "Yay! Thanks for reaching out!",
+        "description": "We'll get back to you as soon as possible."
+      },
+      "fieldEmail": {
+        "label": "Email",
+        "placeholder": "Enter your email here..."
+      },
+      "fieldMessage": {
+        "label": "Message",
+        "placeholder": "What's on your mind?"
+      },
+      "captcha": "This site is protected by reCAPTCHA and the Google <privacy>Privacy Policy</privacy> and <terms>Terms of Service</terms> apply.",
+      "buttonSubmit": {
+        "label": "Submit",
+        "label_send_another": "Send another message"
+      },
+      "messages": {
+        "email_min_1": "Please enter your email.",
+        "email_not_valid": "Please enter a valid email address.",
+        "message_min_1": "Please enter your message."
+      }
+    },
+    "YFLogin": {
+      "alertDestructive": {
+        "title": "Oops! Something went wrong!",
+        "description": "Please try again"
+      },
+      "alertSuccess": {
+        "title": "Yay! Thanks for reaching out!",
+        "description": "We'll get back to you as soon as possible."
+      },
+      "fieldEmail": {
+        "label": "Email",
+        "placeholder": "Enter your email here..."
+      },
+      "fieldMessage": {
+        "label": "Message",
+        "placeholder": "What's on your mind?"
+      },
+      "captcha": "This site is protected by reCAPTCHA and the Google <privacy>Privacy Policy</privacy> and <terms>Terms of Service</terms> apply.",
+      "buttonSubmit": {
+        "label": "Submit",
+        "label_send_another": "Send another message"
+      },
+      "messages": {
+        "email_min_1": "Please enter your email.",
+        "email_not_valid": "Please enter a valid email address.",
+        "message_min_1": "Please enter your message."
+      }
+    },
+    "FormLogin": {
+      "title": "Sign in",
+      "button_google": "Sign in with Google",
+      "button_github": "Sign in with GitHub"
+    },
+    "IconLoadingSpinner": {
+      "label": "Loading..."
+    },
+    "LandingAction": {
+      "title": "Are you loving it?",
+      "button": "Give some love on GitHub."
+    },
+    "LandingFeatures": {
+      "title": "You name it, we've got it.",
+      "subtitle": "Features"
+    },
+    "LandingHero": {
+      "title": "The <underline>real</underline> RRBULL.",
+      "typewriter1": "Do your thing.",
+      "typewriter2": "Deploy your thing.",
+      "typewriter3": "Scale your thing.",
+      "subtitle": "Make better things with RRBULL.",
+      "link_dashboard": "Get started",
+      "link_login": "Start making an impact"
+    },
+    "LandingQuotes": {
+      "title": "Testimonials",
+      "subtitle": "People love using the thing.",
+      "quote1": {
+        "quote": "The thing is the best thing I've ever used. Trust me bro.",
+        "name": "Jules Winnfield",
+        "position": "CEO, Banana Biz."
+      },
+      "quote2": {
+        "quote": "The thing unparalleled things that have advanced our business.",
+        "name": "Mia Wallace",
+        "position": "Product Manager, Cherry Inc."
+      },
+      "quote3": {
+        "quote": "I'm telling you - other things cannot compete with this thing.",
+        "name": "Vincent Vega",
+        "position": "Public Relations, Citrus Co."
+      }
+    },
+    "LandingReferences": {
+      "title": "References",
+      "subtitle": "Top companies trust the thing.",
+      "reference1": {
+        "label": "Cherry Inc."
+      },
+      "reference2": {
+        "label": "Banana Biz."
+      },
+      "reference3": {
+        "label": "Braeburn Ltd."
+      },
+      "reference4": {
+        "label": "Citrus Co."
+      }
+    },
+    "LandingStatistics": {
+      "title": "Stats",
+      "subtitle": "The numbers are looking good.",
+      "stat1": {
+        "label": "Users"
+      },
+      "stat2": {
+        "label": "Subscribers"
+      },
+      "stat3": {
+        "label": "Downloads"
+      },
+      "stat4": {
+        "label": "Products"
+      }
+    },
+    "LandingThings": {
+      "title1": "Join the gang.",
+      "subtitle1": "Get started with Boilerthing today.",
+      "link1": "Get started",
+      "title2": "Wanna talk?",
+      "subtitle2": "We're here to help.",
+      "link2": "Contact us"
+    },
+    "LocaleSwitcher": {
+      "label": "選擇語言",
+      "locale": "{locale, select, de {Deutsch} en {English} zh {简体中文} hk {繁体中文} other {Unknown}}"
+    },
+    "PricingCard": {
+      "price": "{amount}€",
+      "savings": "Save {amount}€/month",
+      "button": "Try for free"
+    },
+    "PricingSelector": {
+      "pay_monthly": "Pay monthly",
+      "pay_annualy": "Pay annually <badge>-20%</badge>",
+      "price_info": "* Prices are in EUR and do not include VAT",
+      "pricingCard1": {
+        "name": "Free Thing",
+        "subtitle": "For individuals",
+        "feature_1": "Unlimited things",
+        "feature_2": "Basic support",
+        "feature_3": "Community access",
+        "feature_4": "Standard security"
+      },
+      "pricingCard2": {
+        "name": "Pro Thing",
+        "subtitle": "Advanced features",
+        "feature_1": "Custom things",
+        "feature_2": "Priority support",
+        "feature_3": "Advanced analytics",
+        "feature_4": "Enhanced security"
+      },
+      "pricingCard3": {
+        "name": "Team Thing",
+        "subtitle": "For teams",
+        "feature_1": "Collaboration things",
+        "feature_2": "Custom roles",
+        "feature_3": "Dedicated support",
+        "feature_4": "Custom integrations"
+      }
+    },
+    "PricingFAQ": {
+      "item1": {
+        "question": "How do I upgrade the thing?",
+        "answer": "You can upgrade your thing at any time by visiting the billing page."
+      },
+      "item2": {
+        "question": "Are there any hidden things?",
+        "answer": "No, there are no hidden things. What you see is what you get."
+      },
+      "item3": {
+        "question": "Can I share my thing with others?",
+        "answer": "Yes, you can share your thing with team members and collaborators."
+      },
+      "item4": {
+        "question": "Can I customize my thing?",
+        "answer": "Yes, our thing allows for extensive customization to fit your needs."
+      },
+      "item5": {
+        "question": "What if I need help with my thing?",
+        "answer": "Our support team is available 24/7 to help you with any thing-related issues."
+      }
+    },
+    "ProfileCard": {
+      "joined_on": "Joined on {date}",
+      "button_delete_account": "Delete my account"
+    },
+    "ScrollToTop": {
+      "aria_label": "Scroll to top"
+    },
+    "SidebarMobile": {
+      "trigger_aria_label": "Open Sidebar",
+      "content_aria_label": "Mobile Navigation"
+    },
+    "VerificationCode": {
+      "graph": {
+        "label": "圖形"
+      },
+      "captcha": {
+        "label": "驗證碼",
+        "verify1": "請輸入驗證碼",
+        "verify2": "驗證碼格式不正確"
+      }
+    },
+    "EmailPhone": {
+      "email": {
+        "label": "郵箱",
+        "verify1": "請輸入您的郵箱",
+        "verify2": "您輸入的郵箱不正確"
+      },
+      "phone": {
+        "label": "電話",
+        "verify1": "請輸入您的電話",
+        "verify2": "您輸入的電話不正確",
+        "verify3": "請選擇國家/地區"
+      }
+    },
+    "Header": {
+      "User": "用戶",
+      "LogOut": "登出",
+      "PersonalInformation": "個人資料"
+    }
+  },
+  "Validators": {
+    "PleaseEnterPassword": "請輸入密碼",
+    "RequiredMsg": "8-15個字符，需包含至少一個大寫同小寫字母、數字、特殊字符",
+    "ChangePassword": "更改密碼",
+    "PasswordsDifferentMsg": "兩次輸入嘅密碼唔一致！",
+    "PleaseConfirmPassword": "请确认密码",
+    "8to15Msg": "密碼長度需要為8-15個字符",
+    "NeedUppercaseMsg": "密碼需要包含至少一個大寫字母",
+    "NeedLowercaseMsg": "密碼需要包含至少一個小寫字母",
+    "NeedOneNumMsg": "密碼需要包含至少一個數字",
+    "NeedOneSpecialMsg": "密碼需要包含至少一個特殊字符"
+  },
+  "Pages": {
+    "Profile": {
+      "title": "Profile"
+    },
+    "Settings": {
+      "title": "Settings"
+    },
+    "Contact": {
+      "title": "Contact",
+      "subtitle": "Don't be a stranger, get in touch!"
+    },
+    "Pricing": {
+      "title": "Pricing",
+      "subtitle": "The below numbers are just examples, Boilerthing is free."
+    },
+    "Page404": {
+      "title": "404",
+      "description": "Sorry, the page you were looking doesn't exist.",
+      "link": "Back to homepage"
+    },
+    "Legal": {
+      "title": "法律文件",
+      "subtitle": "我們高度重視每位用戶的法律權益和責任。在使用我們的服務之前，您應詳細閱讀並理解相關的政策和條款。特別是由於身處不同的國家或地區，可能存在的法律差異等。",
+      "item2Title": "條款與政策",
+      "item2btn1": "個人資料收集聲明",
+      "item2btn2": "客戶協議",
+      "item2btn3": "電子簽署協議",
+      "item2btn4": "訂單執行規則",
+      "item2btn5": "訂單執行風險",
+      "item2btn6": "風險聲明",
+      "item3des1": "RRBULL是由Royal Regal Bullion Limited運營的品牌和商標名稱，註冊於香港並持有金銀業貿易場牌照編號096及香港海關貴金屬交易商A類註冊編號A-B-24-06-07409。",
+      "item3des2": "風險警告：RRBULL的產品或服務涉及在交易所場外交易的復雜衍生產品，具有杠桿特性，這些產品可能會導致迅速資金損失風險，未必適合所有投資者。",
+      "item3des3": "責任說明：本網站所載的資料不構成投資建議，也不包含任何投資活動的要約或邀請，訪問和使用本站內容屬於個人的自願行為。在任何情況下，RRBULL均不對任何個人或實體就其投資行為造成的、導致的或與之相關的全部或部分損失或損害承擔任何責任。",
+      "item3des4": "地區限製：RRBULL不向某些司法管轄區的居民提供服務，包括：美國、英國、伊朗、索馬裏、伊拉克、朝鮮和其他轄區。本網站中的全部信息僅在RRBULL書面同意的情況下，才可復製或使用。 ",
+      "item3des5": "個人資料收集聲明：\"Cookies\"的應用 - 閣下到訪本網站時，網站會作記錄，以分析網站的訪客人數和一般使用狀況。其中部分匿名 數據將透過 \"Cookies\"方式收集。\"Cookies\" 是載有小量數據的檔案，自動儲存於訪客本身計算機所安裝的互聯網瀏覽器，可供本網站日後檢索。如閣下想禁用 \"Cookies\"，可更改瀏覽器的設定，但更改後便不能進入本公司網站的某些部分。每當本公司要求閣下提供個人資料，本公司均會說明收集此等資料的用途，並確保只會將資料用於收集時說明的用途。"
+    },
+    "Promote": {
+      "title": "推廣",
+      "subtitle": "Promote your thing with RRBULL.",
+      "it1Title": "業界最強",
+      "it1des1": "全球受歡迎的交易軟件，多平台整合，支持桌面端、移動端、網頁端交易。",
+      "it2Title": "方便快捷",
+      "it2des1": "極速成交，超過80多種技術指標，強大且穩定。",
+      "it3Title": "豐富圖表",
+      "it3des1": "海量的分析工具庫，還支持自訂創建，建立屬於你的分析框架。",
+      "it4Title": "演算法交易",
+      "it4des1": "支援EA自動化交易，減少人為干預，交易無間斷。",
+      "it5Title": "穩如磐石",
+      "it5des1": "聯繫全球80+交易所和流動性提供商，報價穩定無憂。",
+      "it6Title": "马上开始交易！",
+      "it6btn1": "下载 MetaTrader 5",
+      "qr1": "掃描並獲取 Android APK 文件",
+      "qr2": "掃描並從 App Store 安裝",
+      "qr3": "掃描並從 Google Play 安裝"
+    },
+    "Supervision": {
+      "title": "Supervision",
+      "it0Title": "監管資質",
+      "it0des1_0": "RRBULL是Royal Regal Bullion Ltd的運營品牌名稱，持有香港金銀業貿易場牌照096號及香港海關貴金屬交易商A類註冊",
+      "it0des1_1": "A-B-24-06-07409",
+      "it0des1_2": "。紥根香港，面向世界。",
+      "it1Title": "想您所想",
+      "it1des1": "我們深耕貴金屬領域，致力於為市場參與者提供全面的資訊和專業服務。我們的團隊充滿活力，由經驗豐富的產業鏈從業者和專業交易員組成，實踐以客為先的理念，真正地設身處地了解您的需求，務求提供切合您所需的服務。",
+      "it2Title": "共同成長",
+      "it2des1": "我們陪伴您從入門到精通，跨越每一座山峰，見證您的成長與進步。無論市場如何變幻，我們始終堅守理念，穩中求進，進而求勝。",
+      "it3Title": "親密無間",
+      "it3des1": "我們重視與每一位用戶的關係，通過建立緊密的溝通渠道，讓您隨時提出寶貴的建議，協力我們的改進。",
+      "it4Title": "穩健前行",
+      "it4des1": "我們非常重視網絡及系統安全，時刻嚴密監管，確保交易平台高效而穩定。客戶資金與公司資金分開處理，每年由外部獨立會計師審核，以確保財務穩健。"
+    },
+    "Contract": {
+      "title": "合約細則",
+      "it1Title": "交易黃金",
+      "it1des1": "全球黃金每天逾千億美元交易量，與美國國債市場相當，其高流動性在市場承壓時尤為顯著，這也是黃金吸引投資者的重要特質之一。",
+      "it2Title": "低保證金",
+      "it2des1": "提供靈活杠杆，自由掌控您的資金成本，資本利用率最大化。",
+      "it3Title": "極速執行",
+      "it3des1": "毫秒級的執行速度，無重複報價，讓交易變得高效。",
+      "it4Title": "具競爭力",
+      "it4des1": "低點差和無倉息模式，降低您的交易成本，提升盈利潛力。",
+      "it5Title": "策略自由",
+      "it5des1": "無人為干預，專注協助您的交易，確保交易環境公平和透明。",
+      "th1": "合约",
+      "th2": "黄金 XAUUSD",
+      "th3": "白银 XAGUSD",
+      "td1_1": "标准",
+      "td1_2": "100盎司",
+      "td1_3": "5000盎司",
+      "td2_1": "单笔最大最小",
+      "td2_2": "20/0.01 手",
+      "td3_1": "最低保证金",
+      "td3_2": "按账户类别而定",
+      "td4_1": "维持保证金",
+      "td4_2": "交易日：30%，周末：100%",
+      "td5_1": "锁仓保证金",
+      "td5_2": "100%",
+      "td6_1": "隔夜利息",
+      "td6_2": "已交易平台为准",
+      "td7_1": "交易时间",
+      "td7_2_1": "北京时间",
+      "td7_2_2": "周一 06:05 至 周六 04:55（夏令时） ",
+      "td7_2_3": "周一 07:05 至 周六 05:55（冬令时）",
+      "td7_2_4": "法定节假日、国际休市时间除外",
+      "td8_1": "结算时间",
+      "td8_2_1": "北京时间",
+      "td8_2_2": "交易日 05:00-06:00（夏令时）",
+      "td8_2_3": "交易日 06:00-07:00（冬令时）",
+      "tableDesc": "由于市场瞬息万变，此表仅供参考，一切产品细则以交易软件内参数为准。"
+    },
+    "DemoAccount": {
+      "title": "推廣",
+      "subtitle": "Promote your thing with RRBULL.",
+      "it1Title": "為甚麼要模擬交易？",
+      "it1des1": "模擬交易通常是進入金融市場的第一步。它為新手提供了一個無風險的環境來體驗交易，熟悉市場動態，並建立信心。",
+      "it2Title": "免費學習",
+      "it2des1": "模擬賬戶沒有任何費用，您可以在不承擔任何財務風險的情況下體驗交易，獲得寶貴的經驗。",
+      "it3Title": "掌握操作",
+      "it3des1": "通過模擬交易，您可以熟練掌握交易平台的各種功能和工具。這包括如何下單、設置止損和止盈、使用技術分析工具等。熟練的操作技能將為您在真實交易中節省時間，並提高交易效率，提高勝算。",
+      "it4Title": "建立策略",
+      "it4des1": "模擬賬戶也是測試和優化交易策略的理想場所。您可以在不同的市場條件下，嘗試各種策略，觀察其表現，並進行調整。這不僅有助於您找到最適合自己的交易方法，還能提高您的交易水準。",
+      "it5Title": "與真實環境的區別",
+      "it5des1": "我們的模擬交易環境將盡可能地貼近真實交易環境，但仍有一些關鍵區別。例如：模擬帳戶使用的是虛擬資金，您不會因此賺取真實盈利。其次，市場情緒和心理壓力在模擬交易中未必能夠完全體現，這可能會影響您的交易決策。"
+    },
+    "Announcement": {
+      "title": "公告",
+      "it0Title": "監管資質",
+      "it0des1": "RRBULL是Royal Regal Bullion Ltd的運營品牌名稱，持有香港金銀業貿易場牌照096號及香港海關貴金屬交易商A類註冊A-B-24-06-07409。紥根香港，面向世界。",
+      "it1Title": "想您所想",
+      "it1des1": "我們深耕貴金屬領域，致力於為市場參與者提供全面的資訊和專業服務。我們的團隊充滿活力，由經驗豐富的產業鏈從業者和專業交易員組成，實踐以客為先的理念，真正地設身處地了解您的需求，務求提供切合您所需的服務。",
+      "it2Title": "共同成長",
+      "it2des1": "我們陪伴您從入門到精通，跨越每一座山峰，見證您的成長與進步。無論市場如何變幻，我們始終堅守理念，穩中求進，進而求勝。",
+      "it3Title": "親密無間",
+      "it3des1": "我們重視與每一位用戶的關係，通過建立緊密的溝通渠道，讓您隨時提出寶貴的建議，協力我們的改進。",
+      "it4Title": "穩健前行",
+      "it4des1": "我們非常重視網絡及系統安全，時刻嚴密監管，確保交易平台高效而穩定。客戶資金與公司資金分開處理，每年由外部獨立會計師審核，以確保財務穩健。"
+    },
+    "login": {
+      "title": "RRBULL 歡迎您",
+      "loginForm_user": "郵箱/手機號",
+      "loginForm_password": "密碼",
+      "loginForm_remember": "記住賬號",
+      "loginForm_button": "登錄",
+      "loginSuccessful": "登录成功",
+      "loginForm_forgot": "忘記密碼？",
+      "or": "或",
+      "loginForm_signup": "註冊",
+      "registerForm_region": "國家/地區",
+      "registerForm_email": "郵箱",
+      "registerForm_phone": "手機號",
+      "registerForm_verificationCode": "驗證碼",
+      "registerForm_receiveCode": "接收驗證碼",
+      "registerForm_password": "設置新密碼",
+      "confirmPassword": "確認密碼",
+      "passwordInconsistency": "兩次輸入密碼不一致",
+      "inputPassword": "請輸入密碼",
+      "registerForm_inviteCode": "邀請碼",
+      "checkClause": "請勾選條款",
+      "registerForm_button": "註冊",
+      "registerForm_desc_1": "勾選同意表示您已經完全閱讀並理解，接受公司列出的",
+      "registerForm_desc_2": "法律文件",
+      "registerForm_desc_3": "中的全部條款。",
+      "err_msg_pwd": "8-16個字符,需包含至少一個大寫和小寫字母、數字、特殊字符",
+      "registeredSuccessfully": "注册成功",
+      "retrievePassword": "找回密碼",
+      "changePassword": "修改密碼",
+      "nextStep": "下一步",
+      "lastStep": "上一步"
+    },
+    "Home": {
+      "tooltipTitle1": "GVZ（Gold Volatility Index）黄金波动率指数，又称黄金恐慌指标，用于衡量未来30天黄金市场的预期波动程度，反映了市场情绪的变化。当GVZ指数较高时，即表示市场对黄金价格的波动预期较大；而当GVZ指数较低时，即表示市场情绪较为平静。"
+    },
+    "Account": {
+      "CptInfo": "完善個人資料",
+      "CptInfoMsg": "請完善賬戶資料，以便進行首次入金！",
+      "OpenNewAcc": "開立新賬戶",
+      "WelcomeYou": "歡迎你！",
+      "Comma": "，",
+      "RealAccount": "真實賬戶",
+      "DemoAccount": "模擬賬戶",
+      "StandardAccount": "標準賬戶",
+      "Account": "账户",
+      "CurrencyUnit": "貨幣單位",
+      "AccountType": "帳戶類型",
+      "LeverageSize": "槓桿大小",
+      "InitialCapital": "初始資金",
+      "MasterPasswordSettings": "主密碼設定",
+      "Read-onlyPasswordSetting": "只讀密碼設定",
+      "Submit": "提交",
+      "Return": "返回",
+      "RequiredMsg": "8-15個字符，需包含至少一個大寫同小寫字母、數字、特殊字符",
+      "OpenNewAccount": "開立新賬戶",
+      "PleaseSelect": "請選擇",
+      "CreateTradingAccountSuccess": "創建交易賬戶成功",
+      "FailedToDealBalance": "平衡失敗",
+      "InvalidTradingGroup": "交易組無效",
+      "InvalidTradingLeverage": "交易槓桿無效",
+      "TradingGroupIsRequired": "需要交易組",
+      "TradingLeverageIsRequired": "需要交易槓桿",
+      "TradingMasterPasswordIsRequired": "需要交易主密碼"
+    },
+    "Deposit": {
+      "Deposit": "入金",
+      "TradingAccount": "帳戶",
+      "DepositAmount": "金額",
+      "PleaseSelectAccountType": "請選擇帳戶類型",
+      "PleaseEnterTheAmount": "請輸入金額",
+      "PleaseEnterTwoDecimalPlaces": "請輸入有效嘅金額，最多兩位小數",
+      "PaymentGatewayType": "付款方式",
+      "PleaseSelectPaymentGatewayType": "請選擇付款方式",
+      "Remark": "備註",
+      "Submit": "提交",
+      "PleaseEnterRemarks": "請輸入備註",
+      "UploadResources": "上傳憑證",
+      "TheMinimumAmount": "單筆最低為100USDT"
+    },
+    "Withdrawal": {
+      "Withdrawal": "出金",
+      "TradingAccount": "帳戶",
+      "PleaseSelectAccountType": "請選擇帳戶類型",
+      "WithdrawalType": "出金類型",
+      "BankCard": "銀行卡",
+      "Wallet": "銀包",
+      "ExtractTo": "提取至",
+      "AmountAvailable": "可取金額",
+      "WithdrawalAmount": "取款",
+      "PleaseEnterTwoDecimalPlaces": "請輸入有效嘅金額，最多兩位小數",
+      "PleaseSelect": "請選擇",
+      "WalletAddress": "錢包地址",
+      "Submit": "提交",
+      "SubmissionSuccessful": "提交成功"
+    },
+    "CardManage": {
+      "AddBankCard": "新增銀行卡",
+      "CardNumber": "卡號",
+      "PleaseEnter": "請輸入",
+      "Bank": "銀行",
+      "Branch": "支行",
+      "PleaseSelect": "請選擇",
+      "AddnewWallet": "新增錢包",
+      "WalletAddress": "錢包地址",
+      "PaymentChain": "支付鏈",
+      "CardManagement": "卡片管理",
+      "WalletManagement": "錢包管理",
+      "Submit": "提交",
+      "Max5Card": "最多綁定五張銀行卡",
+      "DelCardMsg": "確認要刪除嗰張銀行卡嗎？",
+      "DelWalletMsg": "確認要刪除嗰個錢包嗎？",
+      "13to19Msg": "請輸入13-19位嘅號碼",
+      "12to50Msg": "請輸入12-50位嘅號碼",
+      "AddedSuccessfully": "添加成功",
+      "Hint": "提示"
+    },
+    "TradingOrder": {
+      "TradingVarieties": "交易品種",
+      "Type": "類型",
+      "OpeningTime": "開倉時間(系統時間)",
+      "ClosingTime": "平倉時間(系統時間)",
+      "LotSize": "手數",
+      "OpeningPrice": "開倉價",
+      "ClosingPrice": "平倉價",
+      "ProfitAndLossUSD": "盈虧USD",
+      "TradingOrder": "交易訂單",
+      "OrderType": "訂單類型",
+      "ClosedOrders": "已結結單",
+      "OpenOrders": "未結訂單",
+      "OrderNumber": "訂單編號",
+      "Comment": "備註",
+      "CommissionAgent": "手續費",
+      "OvernightInterest": "隔夜利息",
+      "TradingAccount": "帳戶",
+      "Total": "共",
+      "Items": "條",
+      "CreateDate": "創建日期"
+    },
+    "DepositAndWithdrawalReport": {
+      "DepositAndWithdrawalReport": "出入金報表",
+      "OrderType": "訂單類型",
+      "ClosedOrders": "已結結單",
+      "OpenOrders": "未結訂單",
+      "CreateDate": "創建日期",
+      "TradingOrder": "交易訂單",
+      "TradingAccount": "帳戶",
+      "Date": "日期",
+      "Time": "時間",
+      "Type": "類型",
+      "Comment": "備註",
+      "AmountUSD": "金额USD",
+      "Total": "共",
+      "Items": "條",
+      "Deposit": "入金",
+      "Withdrawal": "出金",
+      "DeductionPhysical": "實貨扣款",
+      "Status": "出入金處理狀態",
+      "FailCause": "失敗原因",
+      "ApprovalStatus": "審批狀態",
+      "All": "全部",
+      "PendingApproval": "待審批",
+      "UnderReview": "審批中",
+      "ApprovalPassed": "審批通過",
+      "ApprovalRejected": "審批拒絕",
+      "OtherReasons": "其他原因",
+      "Reject": "拒絕",
+      "PaymentGatewayReason": "支付網關原因",
+      "InsufficientFunds": "資金唔夠",
+      "Requesting": "請求中",
+      "Processing": "處理中",
+      "Finish": "完成",
+      "TransactionFailed": "交易失敗",
+      "TradingWallet": "交易錢包"
+    },
+    "LowerLevelCustomers": {
+      "CustomerList": "客戶列表",
+      "CustomerType": "客戶類型",
+      "BiCode": "BI編碼",
+      "ChineseName": "中文名",
+      "EnglishName": "英文名",
+      "MtAccount": "MT賬號",
+      "RebateAmount": "返佣金額",
+      "Balance": "餘額",
+      "TradingVarieties": "交易品種",
+      "Type": "類型",
+      "OpeningTime": "開倉時間(系統時間)",
+      "ClosingTime": "平倉時間(系統時間)",
+      "LotSize": "手數",
+      "OpeningPrice": "開倉價",
+      "ClosingPrice": "平倉價",
+      "ProfitAndLossUSD": "盈虧USD",
+      "TradingOrder": "交易訂單",
+      "OrderType": "訂單類型",
+      "ClosedOrders": "已結結單",
+      "OpenOrders": "未結訂單",
+      "TradingAccount": "帳戶",
+      "CreateDate": "創建日期",
+      "State": "狀態",
+      "ApprovalStatus": "審批狀態",
+      "PendingApproval": "待審批",
+      "ApprovalPassed": "審批通過",
+      "ApprovalRejected": "審批拒絕",
+      "DepositAndWithdrawalReport": "出入金報表",
+      "Date": "日期",
+      "Time": "時間",
+      "Comment": "備註",
+      "AmountUSD": "金额USD",
+      "Total": "共",
+      "Items": "條",
+      "Deposit": "入金",
+      "Withdrawal": "出金",
+      "DeductionPhysical": "實貨扣款",
+      "Status": "出入金處理狀態",
+      "FailCause": "失敗原因",
+      "OtherReasons": "其他原因",
+      "Reject": "拒絕",
+      "PaymentGatewayReason": "支付網關原因",
+      "InsufficientFunds": "資金唔夠",
+      "Requesting": "請求中",
+      "Processing": "處理中",
+      "Finish": "完成",
+      "TransactionFailed": "交易失敗",
+      "TradingWallet": "交易錢包",
+      "Trader": "交易者",
+      "Partners": "合作方",
+      "FilterAccounts": "篩選帳戶",
+      "All": "全部"
+    },
+    "PersonalInfoWrite": {
+      "PlaceOfResidence": "居民身份所在地",
+      "PleaseSelect": "請選擇",
+      "DocumentType": "證件類型",
+      "UploadDocuments": "上傳證件",
+      "ClickToUploadTheFrontPictureOfYourIdCard": "點擊上傳身份證正面圖片",
+      "ClickToUploadTheBackOfYourIdCard": "點擊上傳身份證背面圖片",
+      "ClickToUploadPhotoFrontPassport": "點擊上傳護照正面圖片",
+      "ClickToUploadPassportInformationPicture": "點擊上傳護照信息圖片",
+      "IdNumber": "證件號碼",
+      "PleaseEnter": "請輸入",
+      "ChineseName": "中文名",
+      "ChineseSurname": "中文姓",
+      "EnglishName": "英文名",
+      "EnglishSurname": "英文姓",
+      "OnlyNumbersCanBeEntered": "只能輸入數字",
+      "Email": "電郵箱",
+      "PhoneNumber": "手機號碼",
+      "DateOfBirth": "出生日期",
+      "Address": "地址",
+      "Submit": "提交",
+      "BottomSpanMsg": "點擊提交後鎖定資料唔可以再次修改，等待後台審核。",
+      "PersonalData": "個人資料",
+      "Cancel": "取消",
+      "Confirm": "確認",
+      "BindEmail": "綁定郵箱",
+      "BindMobile": "綁定手機號碼",
+      "IdCard": "身份證",
+      "Passport": "護照",
+      "ModifyEmail": "修改郵箱",
+      "ModifyPhoneMumber": "修改手機號碼",
+      "Required": "必填",
+      "ChineseNa": "中文名",
+      "EnglishNa": "英文名",
+      "AddingEmailMsg": "添加或者修改郵箱需要驗證郵箱",
+      "PleaseSelectRegion": "請選擇地區",
+      "PleaseEnterMobilePhoneNumber": "請輸入手機號碼",
+      "PleaseSelectTime": "請選擇時間",
+      "ResidentialAddress": "居住地",
+      "ResidentStatus": "居民身份",
+      "PleaseUploadDocuments": "請上傳證件",
+      "SubmissionSuccessful": "提交成功！",
+      "TheDocumentUploadFailed": "證件上傳失敗，請刪除重新上傳",
+      "TheCertificateIsBeingMsg": "證件上傳中，請稍後",
+      "EmailVerificationMsg": "添加或者修改郵箱需要驗證郵箱",
+      "UnderReview": "審核中",
+      "CustomerServiceInformationReviewed": "客服資料審核中，請耐心等",
+      "Dismissed": "已駁回",
+      "ReasonForRejection": "駁回原因：",
+      "Resubmit": "重新提交",
+      "RejectionMsg": "被駁回後需要重新修改資料再次提交資料，提交後鎖定資料唔可以再次修改，等待後台審核。",
+      "LockedInfoMsg": "點擊提交後鎖定資料唔可以再次修改，等待後台審核。",
+      "OperationSuccessful": "操作成功",
+      "Create": "創建",
+      "View": "睇返",
+      "Edit": "編輯",
+      "Review": "審核",
+      "CustomerReview": "客戶審核",
+      "RealNameAuthentication": "實名認證",
+      "SuccessfullyOpened": "開設成功",
+      "MobilePhoneVerification": "手機驗證",
+      "EmailVerification": "郵箱驗證"
+    },
+    "ChangePassword": {
+      "PleaseEnterPassword": "請輸入密碼",
+      "Cancel": "取消",
+      "Submit": "提交",
+      "EnterExistingPassword": "輸入現有密碼",
+      "EnterNewPassword": "輸入新密碼",
+      "ReEnterNewPassword": "再次輸入新密碼",
+      "RequiredMsg": "8-15個字符，需包含至少一個大寫同小寫字母、數字、特殊字符",
+      "ChangePassword": "更改密碼",
+      "PasswordsDifferentMsg": "兩次輸入嘅密碼唔一致！",
+      "ModificationSuccessful": "修改成功！",
+      "ModificationFailed": "修改失敗！",
+      "PleaseConfirmPassword": "请确认密码",
+      "8to15Msg": "密碼長度需要為8-15個字符",
+      "NeedUppercaseMsg": "密碼需要包含至少一個大寫字母",
+      "NeedLowercaseMsg": "密碼需要包含至少一個小寫字母",
+      "NeedOneNumMsg": "密碼需要包含至少一個數字",
+      "NeedOneSpecialMsg": "密碼需要包含至少一個特殊字符"
+    }
+  },
+  "Menus": {
+    "Title1": "分析",
+    "Title2": "金生往事",
+    "Title3": "市場特點",
+    "Title4": "邏輯框架",
+    "Title5": "實用資源",
+    "Title6": "推廣",
+    "Title7": "最新活動",
+    "Title8": "邀請好友",
+    "Title9": "VIP服務",
+    "Title10": "網絡營銷",
+    "Title11": "産品",
+    "Title12": "合約細則",
+    "Title13": "賬戶類型",
+    "Title14": "資金存取",
+    "Title15": "收費",
+    "Title16": "工具",
+    "Title17": "MetaTrader 5",
+    "Title18": "模擬賬戶",
+    "Title19": "VPS",
+    "Title20": "關于",
+    "Title21": "公告",
+    "Title22": "運作模式",
+    "Title23": "監管資質",
+    "Title24": "法律文件"
+  },
+  "Common": {
+    "cancel": "取消",
+    "confirm": "確認",
+    "sendSuccess": "發送成功",
+    "loading": "加载中...",
+    "updateIteration": "産品更新叠代中,敬請期待！"
+  },
+  "Service": {
+    "CreateTradingAccountSuccess": "創建交易賬戶成功",
+    "FailedToDealBalance": "平衡失敗",
+    "InvalidTradingGroup": "交易組無效",
+    "InvalidTradingLeverage": "交易槓桿無效",
+    "TradingGroupIsRequired": "需要交易組",
+    "TradingLeverageIsRequired": "需要交易槓桿",
+    "TradingMasterPasswordIsRequired": "需要交易主密碼",
+    "NoRegistrationInformation": "尚未設置註冊信息",
+    "NoRegionalInformation": "未設置區域信息",
+    "NoEmailCode": "未設置電子郵件代碼",
+    "NoCaptchaCode": "未設置圖形驗證碼",
+    "NoEnvironmentVariables": "未設置環境變量",
+    "CodeIsRequired": "必須提供驗證碼",
+    "LoginTypeIsRequired": "必須提供登錄方式",
+    "PasswordIsRequired": "必須提供密碼",
+    "RegionalInformationIsRequired": "必須提供地區信息",
+    "MobileOrEmailIsRequired": "必須提供手機號或郵箱",
+    "MobileIsRequired": "必須提供手機號",
+    "EmailCodeIsRequired": "必須提供郵箱驗證碼",
+    "CaptchaCodeIsRequired": "必須提供圖形驗證碼",
+    "FamilyNameIsRequired": "中文姓氏為必填項",
+    "GivenNameIsRequired": "中文名稱為必填項",
+    "FirstNameIsRequired": "英文名稱為必填項",
+    "LastNameIsRequired": "英文姓氏為必填項",
+    "IDNumberIsRequired": "身份證號碼為必填項",
+    "DocumentTypeIsRequired": "證件類型為必填項",
+    "PlaceOfResidenceIsRequired": "居民身份所在地為必填項",
+    "CertificateAddressIsRequired": "證件地址為必填項",
+    "DateOfBirthIsRequired": "出生日期為必填項",
+    "TradingAccountIsRequired": "冇交易帳號",
+    "CreditCardsIsRequired": "銀行卡為必填項",
+    "WalletAddrIsRequired": "錢包地址為必填項",
+    "FileTypeIsRequired": "文件類型為必填項",
+    "FilePathsIsRequired": "文件地址為必填項",
+    "AllFieldsRequired": "信息都是必填項",
+    "InvalidLoginMethod": "登錄方式無效",
+    "InvalidInviteCode": "邀請碼無效",
+    "InvalidEmail": "此郵箱無效",
+    "InvalidMobile": "此手機號無效",
+    "InvalidCaptcha": "此圖形驗證碼無效",
+    "InvalidEmailCode": "此郵箱驗證碼無效",
+    "InvalidToken": "登錄失效",
+    "InvalidIDNumber": "身份證號碼不合規，請仔細檢查",
+    "InvalidPassport": "護照號碼不合規，請仔細檢查",
+    "InvalidDocumentType": "證件類型不合規",
+    "InvalidBankInfo": "銀行信息無效",
+    "InvalidWalletInfo": "錢包信息無效",
+    "InvalidBankCardNumber": "銀行卡號無效",
+    "InvalidWalletAddr": "錢包地址無效",
+    "InvalidDepositAmount": "入金金額不能低於1美元",
+    "InvalidWithdrawalAmount": "出金金額不能小於0美元",
+    "InvalidFileType": "文件類型無效",
+    "InvalidOriginalPassword": "原始密碼無效",
+    "InvalidPayMethod": "支付方式無效",
+    "InvalidDate": "日期無效",
+    "EmailIsVerified": "該郵件賬號已被驗證",
+    "MobileIsVerified": "該手機號賬號已被驗證",
+    "AccountIsVerified": "該賬號已被驗證",
+    "FailedToGenerateToken": "生成令牌失敗",
+    "FailedToGenerateCaptcha": "生成圖形驗證碼失敗",
+    "FailedToBindBankCard": "綁定銀行卡失敗，請檢查銀行卡信息",
+    "FailedToCheckout": "結賬失敗",
+    "FailedToConnectService": "連接服務失敗",
+    "AccountAlreadyExists": "賬號已存在",
+    "UnregisteredAccount": "未註冊此賬號",
+    "WrongAccountOrPassword": "賬號或密碼錯誤",
+    "EmailCodeMismatch": "電子郵件驗證碼不匹配",
+    "CaptchaCodeMismatch": "圖形驗證碼不匹配",
+    "Matched": "匹配",
+    "CheckCodeFailed": "校驗驗證碼失敗",
+    "SendEmailFailed": "郵件發送失敗",
+    "SendSMSFailed": "短信發送失敗",
+    "OpenMT5AccountFailed": "無法開設MT5賬戶，請聯系管理員",
+    "HighFrequency": "發送頻率過高，請稍後再試。",
+    "Banned": "您發送的短信過多，已被暫時禁言。請聯系管理員，稍後重試",
+    "IDNumberHasBeenAuthenticated": "此身份證號碼已通過實名驗證",
+    "WithdrawalAmount": "出金金額不能大於可取金額",
+    "AccountComplete": "補充驗證方法 賬戶已經有完整帳號",
+    "AccountHasRealName": "補充驗證方式 已經有實名賬戶",
+    "VerifyAccountFirst": "請先驗證您帳戶的電子郵件和電話號碼",
+    "RealNameAccountFirst": "該賬戶還未通過實名認證",
+    "UnselectedFile": "未選擇文件",
+    "FileTypeInvalid": "僅允許上傳 .pdf、.png、.jpg 類型的文件",
+    "CashflowNotFound": "未找到此訂單",
+    "CannotExceed5": "銀行卡數量不能超過5張",
+    "TradingAccountIsExist": "交易賬號已經存在，最多創建兩個真實賬戶",
+    "BadRequest": "請求失敗.",
+    "LoginFailed": "登錄失效，請重新登錄。",
+    "Unauthorized": "請求未授權",
+    "ServiceUnavailable": "服務暫時不可用",
+    "InternalServerError": "服務異常",
+    "NotFound": "未找到數據",
+    "GatewayTimeout": "請求超時",
+    "VerificationCodeSubject": "RRBULL 驗證碼",
+    "VerificationCodeHtmlContent": "<p>尊敬的RRBULL用戶,</p><p>歡迎使用 RRBULL 的服務！請使用以下驗證碼：</p><p><strong>驗證碼：{emailCode}</strong></p><p>此驗證碼在 {minutes} 分鐘內有效。</p><p>如果您並未請求此驗證碼，請忽略此郵件。</p><p>如您有任何疑問或需要幫助，請隨時與我們聯系。</p><p>DoNotReply@rrbullgold.com</p><p>此致</p><p>RRBULL 團隊</p>",
+    "VerificationCodePlainTextContentUser": "尊敬的RRBULL用戶,",
+    "VerificationCodePlainTextWelcome": "歡迎使用 RRBULL 的服務！請使用以下驗證碼：",
+    "VerificationCodePlainTextEmailCode": "驗證碼：{emailCode}",
+    "VerificationCodePlainTextExpiredTime": "此驗證碼在 {minutes} 分鐘內有效。",
+    "VerificationCodePlainTextIgnore": "如果您並未請求此驗證碼，請忽略此郵件。",
+    "VerificationCodePlainTextHelp": "如您有任何疑問或需要幫助，請隨時與我們聯系。",
+    "VerificationCodePlainTextEmail": "DoNotReply@rrbullgold.com",
+    "VerificationCodePlainTextSincerely": "此致,",
+    "VerificationCodePlainTextTeam": "RRBULL 團隊",
+    "TradingAccountSubject": "RRBULL恭喜您完成實盤賬戶註冊！",
+    "TradingAccountHtmlContent": "<p>尊敬的RRBULL用戶,</p><p>您的 MT5 交易賬戶已成功註冊！</p><p>交易賬戶： <strong>{loginId}</strong></p><p>主賬戶密碼： <strong>{masterPassword}</strong></p><p>只讀密碼： <strong>{investorPassword}</strong></p><p>為了保障您的賬戶安全，請勿將密碼交予任何其他人士，以免造成損失。</p><p>如果您在登入或更改密碼時遇到任何問題，請隨時與我們聯系。</p><p>DoNotReply@rrbullgold.com</p><p>祝您交易順利！</p><p>此致,</p><p>RRBULL 團隊</p>",
+    "TradingAccountPlainTextContentUser": "尊敬的RRBULL用戶,",
+    "TradingAccountPlainTextCreated": "您的 MT5 交易賬戶已成功註冊！",
+    "TradingAccountPlainTextTradingAccount": "交易賬戶： {loginId}",
+    "TradingAccountPlainTextMainPassword": "主賬戶密碼： {masterPassword}",
+    "TradingAccountPlainTextInvestorPassword": "只讀密碼： {investorPassword}",
+    "TradingAccountPlainTextSecurity": "為了保障您的賬戶安全，請勿將密碼交予任何其他人士，以免造成損失。",
+    "TradingAccountPlainTextHelp": "如果您在登入或更改密碼時遇到任何問題，請隨時與我們聯系。",
+    "TradingAccountPlainTextEmail": "DoNotReply@rrbullgold.com",
+    "TradingAccountPlainTextSuccess": "祝您交易順利！",
+    "TradingAccountPlainTextSincerely": "此致,",
+    "TradingAccountPlainTextTeam": "RRBULL 團隊",
+    "Success": "Success",
+    "TwilioSuccess": "Twilio驗證碼發送成功，待驗證",
+    "EmailSuccess": "郵箱發送成功",
+    "LoginSuccess": "登入成功",
+    "RegisterSuccess": "註冊成功",
+    "FileUploadSuccess": "文件上傳成功",
+    "WithdrawalApplicationSuccess": "已提交出金申請",
+    "SMSSuccess": "SMS驗證碼發送成功，待驗證",
+    "CannotApplyForIB": "當前帳號唔可以申請代理",
+    "NoSMSCode": "冇手機驗證碼",
+    "SMSCodeIsRequired": "手機驗證碼為必填項",
+    "InvalidSMSCode": "手機驗證碼無效",
+    "SMSCodeMismatch": "手機驗證碼唔匹配",
+    "TimeoutSMSCode": "手機驗證碼過期",
+    "TimeoutEmailCode": "郵箱驗證碼過期"
+  }
+}

@@ -1,0 +1,79 @@
+name: Azure Static Web Apps CI/CD
+# 定义了这个 GitHub Actions 工作流的名称。
+on:
+  push:
+    branches:
+      - main
+      # - dev
+      - test
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+    - main
+    - test
+    - dev
+
+# 指定了触发工作流的事件。在这里，工作流会在推送到 main 分支时触发，也会在针对 main 分支的拉取请求（PR）事件（如打开、同步、重新打开和关闭）时触发。
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+
+   # 定义了作业中的步骤。这个步骤使用 actions/checkout@v3 操作从仓库中检出代码，并配置了子模块和大文件存储（LFS）。
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: false
+
+
+      - name: Install dependencies
+        run: yarn install
+
+      # - name: Build project
+      #   run: npm run build    
+
+    
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          # 使用 GitHub Secrets 中存储的 Azure 静态 Web 应用 API 令牌。
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WHITE_BAY_0E9B5F000 }}
+          # 使用 GitHub Secrets 中存储的 GitHub 令牌，用于 GitHub 集成（如 PR 评论）
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+
+          # action：指定操作类型为 upload，表示上传构建后的静态文件。
+          action: "upload"
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+
+          # app_location：指定应用程序的根目录。
+          app_location: "/" # App source code path
+          # api_location：指定 API 的目录（可选）。
+          api_location: "" # Api source code path - optional
+
+          # output_location：指定构建输出的目录，这里是 dist。
+          output_location: "dist" # Built app content directory - optional
+          # 自定义脚本
+          app_build_command: 'npm run build:test'
+
+          ###### End of Repository/Build Configurations ######
+
+  #  推送到服务器后，关闭拉取请求。
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    # 推送到ubuntu 服务器
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          # 使用 GitHub Secrets 中存储的 Azure 静态 Web 应用 API 令牌。
+          # action：指定操作类型为 close，用于关闭拉取请求。
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WHITE_BAY_0E9B5F000 }}
+          action: "close"
+          app_location: "/"

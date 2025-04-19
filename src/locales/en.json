@@ -1,0 +1,999 @@
+{
+  "Meta": {
+    "title": "RRBULL",
+    "description": "RRBULL."
+  },
+  "Request": {
+    "PleaseLogInAgain": "Please log in again",
+    "WrongRequestMethod": "Wrong request method",
+    "AccessDenied": "Access denied",
+    "TheRequestAddressIsIncorrect": "The request address is incorrect",
+    "ServerError": "Server error",
+    "RequestErrorPleaseTryAgainLater": "Request error, please try again later"
+  },
+  "Routes": {
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "login": "Log in",
+    "signup": "Sign up",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "settings": "Settings",
+    "about": "About",
+    "products": "products",
+    "tools": "Tools",
+    "analysis": "Analysis",
+    "promote": "Promote",
+    "legal": "Legal",
+    "supervision": "Supervision",
+    "contract": "Contract",
+    "demoAccount": "Demo Account",
+    "announcement": "Announcement"
+  },
+  "Components": {
+    "Form": {
+      "Search": "Search",
+      "Reset": "Reset",
+      "Close": "Close",
+      "Expand": "Expand",
+      "AllDate": "All date"
+    },
+    "Table": {
+      "Total": "Total",
+      "Items": "items"
+    },
+    "Upload": {
+      "UploadPictures": "Upload pictures"
+    },
+    "TermsPart": {
+      "AveragePaymentTime": "average payment time",
+      "Immediate": "Immediate",
+      "Commission": "Commission",
+      "HowToUsingNeteller": "How to withdraw funds using Neteller?",
+      "ThingsToNote": "Things to note",
+      "KindTips": "Kind tips",
+      "TheMinimumAmount": "The minimum amount per transaction is 100USDT;",
+      "TheMinimumAmountPerTransaction": "The minimum amount per transaction is 100USDT and the maximum amount is ",
+      "USDT": "USDT;",
+      "TheTransferAmountMsg": "The transfer amount must be equal to the amount of the order after deducting the handling fee, otherwise it will not be credited to the account;",
+      "EachDepositMustBeResubmitted": "Each deposit must be resubmitted, the old order address is invalid, do not reuse;",
+      "OurCompanyIsNotResponsible": "Our company is not responsible for any losses caused by input errors or exchange rate changes caused by delayed arrival of funds;",
+      "PleaseDoNotSubmitDepositApplications": "Please do not submit deposit applications frequently to avoid risk control;",
+      "PleaseKeepScreenshotAfterEachTransferForBackup": "Please keep a screenshot after each transfer for backup;",
+      "PleaseContactOurOnlineCustomerService": "If you have any questions, please contact our online customer service or send an email to info@rrbullgold.com.",
+      "TheMinimumWithdrawalAmountIsUSD20": "The minimum withdrawal amount is USD20.",
+      "TheBankCardUsedToWithdrawMoneyMustBeOwned": "The bank card used to withdraw money must be owned by the person himself, and third-party withdrawals are prohibited.",
+      "PleaseEnsureThatTheBankCardInformationIsCorrect": "Please ensure that the bank card information is correct. Our company is not responsible for any losses caused by input errors.",
+      "ItIsRecommendedToSubmitWithdrawalApplication": "It is recommended to submit a withdrawal application only when you have no positions;",
+      "IfYouHoldPositionWhenWithdrawingFunds": "If you hold a position when withdrawing funds, the amount that can be submitted is the unused margin;",
+      "IfYouHaveAnyQuestionsPleaseContact": "If you have any questions, please contact our online customer service or send an email to info@rrbullgold.com.",
+      "DepositsMustBeMadeToOnesOwnAccount": "Deposits must be made to one's own account, and third-party deposits are prohibited;",
+      "MinimumSingleTransactionAmountIs": "Minimum single transaction amount is",
+      "RMBUpTo": "RMB, up to",
+      "RMB": "RMB",
+      "DepositTimeIs": "Deposit time is:",
+      "PleaseDoNotFillInAnyRemarksOrComments": "Please do not fill in any remarks or comments;",
+      "TransfersMadeDuringTheEveningHoursOfWeekdays": "Transfers made during the evening hours of weekdays or during holidays may be delayed, so please allow enough time for processing.",
+      "TheWalletAddressForWithdrawalMustBeOwned": "The wallet address for withdrawal must be owned by the real name of the person, and third-party withdrawal is prohibited;",
+      "WeMayNeedToAskDocumentsOfYourWallet": "We may need to ask you for the real-name certification documents of your wallet;",
+      "PleaseMakeSureTheWalletAddressIsCorrect": "Please make sure the wallet address is correct. Our company will not be responsible for any losses caused by incorrect input;"
+    },
+    "ModalConfirm": {
+      "Hint": "Hint",
+      "CptInfo": "Complete personal information",
+      "Confirm": "Confirm",
+      "Cancel": "Cancel",
+      "PleaseCompletePersonalInformationMsg": "Please complete your personal information after real-name authentication",
+      "RegistrationSuccessful": "Registration successful",
+      "PleaseDoNotFillInAnyRemarksOrComments": "Please do not fill in any remarks or comments;"
+    },
+    "Menu": {
+      "Account": "Account",
+      "Wallet": "Wallet",
+      "Deposit": "Deposit",
+      "Withdrawal": "Withdrawal",
+      "CardManage": "Card management",
+      "Report": "Report",
+      "TradingOrder": "Trading order",
+      "DepositAndWithdrawalReport": "Deposit and Withdrawal Report",
+      "Setting": "Setting",
+      "PersonalInfoWrite": "Real name authentication",
+      "ChangePassword": "Change password",
+      "LowerLevelCustomers": "Lower level customers",
+      "CustomerList": "Customer list",
+      "LastName": "Last Name",
+      "FirstName": "First Name"
+    },
+    "DatePicker": {
+      "StartDate": "Start Date",
+      "EndDate": "End Date"
+    },
+    "withSidebar": {
+      "ContentFooter": {
+        "message": "Some content for the footer."
+      },
+      "SidebarMobile": {
+        "sheet_trigger_aria_label": "Open Sidebar",
+        "sheet_content_aria_label": "Mobile Navigation"
+      }
+    },
+    "BadgeAdmin": {
+      "label": "Admin"
+    },
+    "ButtonLogin": {
+      "title": "Log in"
+    },
+    "ButtonLogout": {
+      "title": "Log out"
+    },
+    "ButtonSignup": {
+      "title": "Sign up"
+    },
+    "FormContact": {
+      "alertDestructive": {
+        "title": "Oops! Something went wrong!",
+        "description": "Please try again"
+      },
+      "alertSuccess": {
+        "title": "Yay! Thanks for reaching out!",
+        "description": "We'll get back to you as soon as possible."
+      },
+      "fieldEmail": {
+        "label": "Email",
+        "placeholder": "Enter your email here..."
+      },
+      "fieldMessage": {
+        "label": "Message",
+        "placeholder": "What's on your mind?"
+      },
+      "captcha": "This site is protected by reCAPTCHA and the Google <privacy>Privacy Policy</privacy> and <terms>Terms of Service</terms> apply.",
+      "buttonSubmit": {
+        "label": "Submit",
+        "label_send_another": "Send another message"
+      },
+      "messages": {
+        "email_min_1": "Please enter your email.",
+        "email_not_valid": "Please enter a valid email address.",
+        "message_min_1": "Please enter your message."
+      }
+    },
+    "YFLogin": {
+      "alertDestructive": {
+        "title": "Oops! Something went wrong!",
+        "description": "Please try again"
+      },
+      "alertSuccess": {
+        "title": "Yay! Thanks for reaching out!",
+        "description": "We'll get back to you as soon as possible."
+      },
+      "fieldEmail": {
+        "label": "Email",
+        "placeholder": "Enter your email here..."
+      },
+      "fieldMessage": {
+        "label": "Message",
+        "placeholder": "What's on your mind?"
+      },
+      "captcha": "This site is protected by reCAPTCHA and the Google <privacy>Privacy Policy</privacy> and <terms>Terms of Service</terms> apply.",
+      "buttonSubmit": {
+        "label": "Submit",
+        "label_send_another": "Send another message"
+      },
+      "messages": {
+        "email_min_1": "Please enter your email.",
+        "email_not_valid": "Please enter a valid email address.",
+        "message_min_1": "Please enter your message."
+      }
+    },
+    "FormLogin": {
+      "title": "Sign in",
+      "button_google": "Sign in with Google",
+      "button_github": "Sign in with GitHub"
+    },
+    "IconLoadingSpinner": {
+      "label": "Loading..."
+    },
+    "LandingAction": {
+      "title": "Are you loving it?",
+      "button": "Give some love on GitHub."
+    },
+    "LandingFeatures": {
+      "title": "You name it, we've got it.",
+      "subtitle": "Features"
+    },
+    "LandingHero": {
+      "title": "The <underline>real</underline> RRBULL.",
+      "typewriter1": "Do your thing.",
+      "typewriter2": "Deploy your thing.",
+      "typewriter3": "Scale your thing.",
+      "subtitle": "Make better things with RRBULL.",
+      "link_dashboard": "Get started",
+      "link_login": "Start making an impact"
+    },
+    "LandingQuotes": {
+      "title": "Testimonials",
+      "subtitle": "People love using the thing.",
+      "quote1": {
+        "quote": "The thing is the best thing I've ever used. Trust me bro.",
+        "name": "Jules Winnfield",
+        "position": "CEO, Banana Biz."
+      },
+      "quote2": {
+        "quote": "The thing unparalleled things that have advanced our business.",
+        "name": "Mia Wallace",
+        "position": "Product Manager, Cherry Inc."
+      },
+      "quote3": {
+        "quote": "I'm telling you - other things cannot compete with this thing.",
+        "name": "Vincent Vega",
+        "position": "Public Relations, Citrus Co."
+      }
+    },
+    "LandingReferences": {
+      "title": "References",
+      "subtitle": "Top companies trust the thing.",
+      "reference1": {
+        "label": "Cherry Inc."
+      },
+      "reference2": {
+        "label": "Banana Biz."
+      },
+      "reference3": {
+        "label": "Braeburn Ltd."
+      },
+      "reference4": {
+        "label": "Citrus Co."
+      }
+    },
+    "LandingStatistics": {
+      "title": "Stats",
+      "subtitle": "The numbers are looking good.",
+      "stat1": {
+        "label": "Users"
+      },
+      "stat2": {
+        "label": "Subscribers"
+      },
+      "stat3": {
+        "label": "Downloads"
+      },
+      "stat4": {
+        "label": "Products"
+      }
+    },
+    "LandingThings": {
+      "title1": "Join the gang.",
+      "subtitle1": "Get started with Boilerthing today.",
+      "link1": "Get started",
+      "title2": "Wanna talk?",
+      "subtitle2": "We're here to help.",
+      "link2": "Contact us"
+    },
+    "LocaleSwitcher": {
+      "label": "Change language",
+      "locale": "{locale, select, de {Deutsch} en {English} zh {简体中文} hk {繁體中文} other {Unknown}}"
+    },
+    "PricingCard": {
+      "price": "{amount}€",
+      "savings": "Save {amount}€/month",
+      "button": "Try for free"
+    },
+    "PricingSelector": {
+      "pay_monthly": "Pay monthly",
+      "pay_annualy": "Pay annually <badge>-20%</badge>",
+      "price_info": "* Prices are in EUR and do not include VAT",
+      "pricingCard1": {
+        "name": "Free Thing",
+        "subtitle": "For individuals",
+        "feature_1": "Unlimited things",
+        "feature_2": "Basic support",
+        "feature_3": "Community access",
+        "feature_4": "Standard security"
+      },
+      "pricingCard2": {
+        "name": "Pro Thing",
+        "subtitle": "Advanced features",
+        "feature_1": "Custom things",
+        "feature_2": "Priority support",
+        "feature_3": "Advanced analytics",
+        "feature_4": "Enhanced security"
+      },
+      "pricingCard3": {
+        "name": "Team Thing",
+        "subtitle": "For teams",
+        "feature_1": "Collaboration things",
+        "feature_2": "Custom roles",
+        "feature_3": "Dedicated support",
+        "feature_4": "Custom integrations"
+      }
+    },
+    "PricingFAQ": {
+      "item1": {
+        "question": "How do I upgrade the thing?",
+        "answer": "You can upgrade your thing at any time by visiting the billing page."
+      },
+      "item2": {
+        "question": "Are there any hidden things?",
+        "answer": "No, there are no hidden things. What you see is what you get."
+      },
+      "item3": {
+        "question": "Can I share my thing with others?",
+        "answer": "Yes, you can share your thing with team members and collaborators."
+      },
+      "item4": {
+        "question": "Can I customize my thing?",
+        "answer": "Yes, our thing allows for extensive customization to fit your needs."
+      },
+      "item5": {
+        "question": "What if I need help with my thing?",
+        "answer": "Our support team is available 24/7 to help you with any thing-related issues."
+      }
+    },
+    "ProfileCard": {
+      "joined_on": "Joined on {date}",
+      "button_delete_account": "Delete my account"
+    },
+    "ScrollToTop": {
+      "aria_label": "Scroll to top"
+    },
+    "SidebarMobile": {
+      "trigger_aria_label": "Open Sidebar",
+      "content_aria_label": "Mobile Navigation"
+    },
+    "VerificationCode": {
+      "graph": {
+        "label": "Graph"
+      },
+      "captcha": {
+        "label": "Captcha",
+        "verify1": "Please enter the verification code",
+        "verify2": "The format of the verification code is incorrect"
+      }
+    },
+    "EmailPhone": {
+      "email": {
+        "label": "EMail",
+        "verify1": "Please enter your email address",
+        "verify2": "The email address you entered is incorrect"
+      },
+      "phone": {
+        "label": "phone",
+        "verify1": "Please enter your phone number",
+        "verify2": "The number you entered is incorrect. Please enter your number",
+        "verify3": "Please select a country/region"
+      }
+    },
+    "Header": {
+      "User": "User",
+      "LogOut": "Log out",
+      "PersonalInformation": "Personal information"
+    }
+  },
+  "Validators": {
+    "PleaseEnterPassword": "Please enter password",
+    "RequiredMsg": "8-15 characters, including at least one uppercase and lowercase letter, number, and special character",
+    "ChangePassword": "Change password",
+    "PasswordsDifferentMsg": "The passwords you entered twice do not match!",
+    "PleaseConfirmPassword": "Please confirm password",
+    "8to15Msg": "The password must be 8-15 characters long",
+    "NeedUppercaseMsg": "Password must contain at least one uppercase letter",
+    "NeedLowercaseMsg": "The password must contain at least one lowercase letter",
+    "NeedOneNumMsg": "The password must contain at least one number",
+    "NeedOneSpecialMsg": "The password must contain at least one special character"
+  },
+  "Pages": {
+    "Profile": {
+      "title": "Profile"
+    },
+    "Settings": {
+      "title": "Settings"
+    },
+    "Contact": {
+      "title": "Contact",
+      "subtitle": "Don't be a stranger, get in touch!"
+    },
+    "Pricing": {
+      "title": "Pricing",
+      "subtitle": "The below numbers are just examples, Boilerthing is free."
+    },
+    "Page404": {
+      "title": "404",
+      "description": "Sorry, the page you were looking doesn't exist.",
+      "link": "Back to homepage"
+    },
+    "Legal": {
+      "title": "Legal documents",
+      "subtitle": "We value the legal rights and responsibilities of each user. You should read and understand the relevant policies and terms before using our services. There may be legal differences due to being in different countries or regions.",
+      "item2Title": "Terms and Policies",
+      "item2btn1": "Personal Data Collection Statement",
+      "item2btn2": "Client Agreement",
+      "item2btn3": "Consent To Electronic Signature",
+      "item2btn4": "Order Execution Policy",
+      "item2btn5": "Order Execution Risk",
+      "item2btn6": "Risk Warning Notice",
+      "item3des1": "RRBULL is a brand and trademark operated by Royal Regal Bullion Limited, registered in HKSAR, and holding the CGSE License 096 and Category A Registration of a DPMS No. A-B-24-06-07409 from HK Customs and Excise Department.  ",
+      "item3des2": "Risk Warning: the products or services involve complex OTC derivatives trading and leverage, which can result in rapid capital loss risks and may not be suitable for all investors. ",
+      "item3des3": "Disclaimer: the information contained on this website does not constitute investment advice, nor does it include any offer or invitation for any investment activity. Accessing and using the content of this site is a voluntary act by individuals. Under no circumstances shall RRBULL be liable for any loss or damage, in whole or in part, caused by, resulting from, or related to the investment activities of any individual or entity. ",
+      "item3des4": "Regional Restrictions: RRBULL does not offer services to residents of certain jurisdictions, including but not limited to: the United States, the United Kingdom, Iran, Somalia, Iraq, North Korea, and other jurisdictions. All information on this website may only be reproduced or used with the written consent of RRBULL. ",
+      "item3des5": "Collection of Personal Information ：Use of \"Cookies\" - When you visit this website, records will be made to analyze the number of visitors and general usage. Some anonymous data will be collected through \"Cookies\". \"Cookies\" are files containing small amounts of data automatically stored by the internet browser installed on the visitor's computer for future retrieval by this website. If you wish to disable cookies, you can change your browser settings, but doing so may prevent you from accessing certain parts of our website. Whenever we require you to provide personal information, we will explain the purpose of collecting such information and ensure that it will only be used for the purposes stated at the time of collection. "
+    },
+    "Promote": {
+      "title": "Promote",
+      "subtitle": "Promote your thing with RRBULL.",
+      "it1Title": "The Most Powerful Platform",
+      "it1des1": "High reputation trading software with multi-platform integration, supporting desktop, mobile, and web trading.",
+      "it2Title": "Convenient and Fast",
+      "it2des1": "Ultra-fast transactions, over 80 technical indicators, powerful and stable.",
+      "it3Title": "Tremendous Charts",
+      "it3des1": "Extensive library of analysis tools, supports customization to build your own analysis framework.",
+      "it4Title": "Algorithmic Trading",
+      "it4des1": "Supports EA automated trading, reducing human intervention, ensuring uninterrupted trading.",
+      "it5Title": "Rock-Solid",
+      "it5des1": "Connects to over 80 exchanges and liquidity providers worldwide, ensuring stable and reliable quotes.",
+      "it6Title": "Start Right Away!",
+      "it6btn1": "Download MetaTrader 5",
+      "qr1": "Scan and get Android APK files",
+      "qr2": "Scan and install from App Store",
+      "qr3": "Scan and install from Google Play"
+    },
+    "Supervision": {
+      "title": "Supervision",
+      "it0Title": "監管資質",
+      "it0des1_0": "RRBULL是Royal Regal Bullion Ltd的運營品牌名稱，持有香港金銀業貿易場牌照096號及香港海關貴金屬交易商A類註冊",
+      "it0des1_1": "A-B-24-06-07409",
+      "it0des1_2": "。紥根香港，面向世界。",
+      "it1Title": "想您所想",
+      "it1des1": "我們深耕貴金屬領域，致力於為市場參與者提供全面的資訊和專業服務。我們的團隊充滿活力，由經驗豐富的產業鏈從業者和專業交易員組成，實踐以客為先的理念，真正地設身處地了解您的需求，務求提供切合您所需的服務。",
+      "it2Title": "共同成長",
+      "it2des1": "我們陪伴您從入門到精通，跨越每一座山峰，見證您的成長與進步。無論市場如何變幻，我們始終堅守理念，穩中求進，進而求勝。",
+      "it3Title": "親密無間",
+      "it3des1": "我們重視與每一位用戶的關係，通過建立緊密的溝通渠道，讓您隨時提出寶貴的建議，協力我們的改進。",
+      "it4Title": "穩健前行",
+      "it4des1": "我們非常重視網絡及系統安全，時刻嚴密監管，確保交易平台高效而穩定。客戶資金與公司資金分開處理，每年由外部獨立會計師審核，以確保財務穩健。"
+    },
+    "Contract": {
+      "title": "Contract",
+      "it1Title": "交易黃金",
+      "it1des1": "全球黃金每天逾千億美元交易量，與美國國債市場相當，其高流動性在市場承壓時尤為顯著，這也是黃金吸引投資者的重要特質之一。",
+      "it2Title": "低保證金",
+      "it2des1": "提供靈活杠杆，自由掌控您的資金成本，資本利用率最大化。",
+      "it3Title": "極速執行",
+      "it3des1": "毫秒級的執行速度，無重複報價，讓交易變得高效。",
+      "it4Title": "具競爭力",
+      "it4des1": "低點差和無倉息模式，降低您的交易成本，提升盈利潛力。",
+      "it5Title": "策略自由",
+      "it5des1": "無人為干預，專注協助您的交易，確保交易環境公平和透明。",
+      "th1": "合约",
+      "th2": "黄金 XAUUSD",
+      "th3": "白银 XAGUSD",
+      "td1_1": "标准",
+      "td1_2": "100盎司",
+      "td1_3": "5000盎司",
+      "td2_1": "单笔最大最小",
+      "td2_2": "20/0.01 手",
+      "td3_1": "最低保证金",
+      "td3_2": "按账户类别而定",
+      "td4_1": "维持保证金",
+      "td4_2": "交易日：30%，周末：100%",
+      "td5_1": "锁仓保证金",
+      "td5_2": "100%",
+      "td6_1": "隔夜利息",
+      "td6_2": "已交易平台为准",
+      "td7_1": "交易时间",
+      "td7_2_1": "北京时间",
+      "td7_2_2": "周一 06:05 至 周六 04:55（夏令时） ",
+      "td7_2_3": "周一 07:05 至 周六 05:55（冬令时）",
+      "td7_2_4": "法定节假日、国际休市时间除外",
+      "td8_1": "结算时间",
+      "td8_2_1": "北京时间",
+      "td8_2_2": "交易日 05:00-06:00（夏令时）",
+      "td8_2_3": "交易日 06:00-07:00（冬令时）",
+      "tableDesc": "由于市场瞬息万变，此表仅供参考，一切产品细则以交易软件内参数为准。"
+    },
+    "DemoAccount": {
+      "title": "Promote",
+      "subtitle": "Promote your thing with RRBULL.",
+      "it1Title": "Why Demo Account? ",
+      "it1des1": "Trading a demo account is often the first step into the financial markets. It provides beginners with a risk-free environment to experience trading, understand market dynamics, and build confidence. ",
+      "it2Title": "Free Learning. ",
+      "it2des1": "A demo account comes at no cost, allowing you to gain valuable experience without any risk. ",
+      "it3Title": "Mastering Operations. ",
+      "it3des1": "Through trading a demo account, you can become proficient with various functions and tools of the trading platform. This includes placing orders, setting stop-loss and take-profit levels, and using technical analysis tools. Proficiency in these operations will save time and increase efficiency in real trading, leading you to success. ",
+      "it4Title": "Developing Strategies. ",
+      "it4des1": "It is an ideal place to test and optimize trading strategies. You can try different strategies under various market conditions, observe their performance, and make adjustments. This not only helps you find the most suitable trading methods but also enhances your overall skills. ",
+      "it5Title": "Differences between the Real. ",
+      "it5des1": "Our simulated trading environment closely mimics the real conditions, but there are some key differences. For example, it uses virtual funds, so you won't earn real profits. Additionally, market sentiment and psychological pressure may not be fully reflected under the simulated environment, which could affect your decision making. "
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "it0Title": "監管資質",
+      "it0des1": "RRBULL是Royal Regal Bullion Ltd的運營品牌名稱，持有香港金銀業貿易場牌照096號及香港海關貴金屬交易商A類註冊A-B-24-06-07409。紥根香港，面向世界。",
+      "it1Title": "想您所想",
+      "it1des1": "我們深耕貴金屬領域，致力於為市場參與者提供全面的資訊和專業服務。我們的團隊充滿活力，由經驗豐富的產業鏈從業者和專業交易員組成，實踐以客為先的理念，真正地設身處地了解您的需求，務求提供切合您所需的服務。",
+      "it2Title": "共同成長",
+      "it2des1": "我們陪伴您從入門到精通，跨越每一座山峰，見證您的成長與進步。無論市場如何變幻，我們始終堅守理念，穩中求進，進而求勝。",
+      "it3Title": "親密無間",
+      "it3des1": "我們重視與每一位用戶的關係，通過建立緊密的溝通渠道，讓您隨時提出寶貴的建議，協力我們的改進。",
+      "it4Title": "穩健前行",
+      "it4des1": "我們非常重視網絡及系統安全，時刻嚴密監管，確保交易平台高效而穩定。客戶資金與公司資金分開處理，每年由外部獨立會計師審核，以確保財務穩健。"
+    },
+    "login": {
+      "title": "Welcome to RRBULL",
+      "loginForm_user": "Email/Mobile phone",
+      "loginForm_password": "Password",
+      "loginForm_remember": "Remember account number",
+      "loginForm_button": "Log in",
+      "loginSuccessful": "Login successful",
+      "loginForm_forgot": "Forgot password?",
+      "or": "or",
+      "loginForm_signup": "Sign up",
+      "registerForm_region": "Country/Region",
+      "registerForm_email": "Email",
+      "registerForm_phone": "Mobile phone",
+      "registerForm_verificationCode": "Verification code",
+      "registerForm_receiveCode": "Get code",
+      "registerForm_password": "Set password",
+      "passwordInconsistency": "The two passwords are inconsistent",
+      "confirmPassword": "Confirm password",
+      "inputPassword": "Please enter password",
+      "checkClause": "Please check terms",
+      "registerForm_inviteCode": "Invitation code",
+      "registerForm_button": "Sign up",
+      "registerForm_desc_1": "Checking the box indicates that you have fully read and understood and accepted the company’s",
+      "registerForm_desc_2": "Legal Documents",
+      "registerForm_desc_3": "all terms in .",
+      "err_msg_pwd": "8-16 characters, including at least one uppercase and lowercase letter, number, and special character",
+      "registeredSuccessfully": "Registered successfully",
+      "retrievePassword": "Retrieve password",
+      "changePassword": "Change password",
+      "nextStep": "Next Step",
+      "lastStep": "Last step"
+    },
+    "Home": {
+      "tooltipTitle1": "GVZ (Gold Volatility Index) The gold Volatility Index, also known as the Gold Fear Indicator, is used to measure the expected volatility of the gold market over the next 30 days, reflecting changes in market sentiment. When the GVZ index is high, it means that the market expects large fluctuations in gold prices; When the GVZ index is low, it means that market sentiment is calmer."
+    },
+    "Account": {
+      "CptInfo": "Complete personal information",
+      "CptInfoMsg": "Please complete your account information to make your first deposit!",
+      "OpenNewAcc": "Open a new account",
+      "WelcomeYou": "Welcome!",
+      "Comma": ",",
+      "RealAccount": "Real account",
+      "DemoAccount": "Demo account",
+      "StandardAccount": "Standard account",
+      "Account": "Account",
+      "CurrencyUnit": "Currency unit",
+      "AccountType": "Account type",
+      "LeverageSize": "Leverage size",
+      "InitialCapital": "Initial capital",
+      "MasterPasswordSettings": "Master password settings",
+      "Read-onlyPasswordSetting": "Read-only password setting",
+      "Submit": "Submit",
+      "Return": "Return",
+      "RequiredMsg": "8-15 characters, including at least one uppercase and lowercase letter, number, and special character",
+      "OpenNewAccount": "Open New Account",
+      "PleaseSelect": "Please select",
+      "CreateTradingAccountSuccess": "Create trading account successful.",
+      "FailedToDealBalance": "Failed to banlance",
+      "InvalidTradingGroup": "Invalid trading group",
+      "InvalidTradingLeverage": "Invalid trading leverage",
+      "TradingGroupIsRequired": "Trading group is required.",
+      "TradingLeverageIsRequired": "Trading leverage is required.",
+      "TradingMasterPasswordIsRequired": "Trading master password is required"
+    },
+    "Deposit": {
+      "Deposit": "Deposit",
+      "TradingAccount": "Trading account",
+      "DepositAmount": "Deposit amount",
+      "PleaseSelectAccountType": "Please select account type",
+      "PleaseEnterTheAmount": "Please enter the amount",
+      "PleaseEnterTwoDecimalPlaces": "Please enter a valid amount with up to two decimal places",
+      "PaymentGatewayType": "Payment gateway type",
+      "PleaseSelectPaymentGatewayType": "Please select payment gateway type",
+      "Remark": "Remark",
+      "Submit": "Submit",
+      "PleaseEnterRemarks": "Please enter remarks",
+      "UploadResources": "Upload resources",
+      "TheMinimumAmount": "The minimum amount per transaction is 100USDT"
+    },
+    "Withdrawal": {
+      "Withdrawal": "Withdrawal",
+      "TradingAccount": "Trading account",
+      "PleaseSelectAccountType": "Please select account type",
+      "WithdrawalType": "Withdrawal type",
+      "BankCard": "Bank card",
+      "Wallet": "Wallet",
+      "ExtractTo": "Extract to",
+      "AmountAvailable": "Amount available",
+      "WithdrawalAmount": "Withdraw money",
+      "PleaseEnterTwoDecimalPlaces": "Please enter a valid amount with up to two decimal places",
+      "PleaseSelect": "Please select",
+      "WalletAddress": "Wallet address",
+      "Submit": "Submit",
+      "SubmissionSuccessful": "Submission successful"
+    },
+    "CardManage": {
+      "AddBankCard": "Add a new bank card",
+      "CardNumber": "Card number",
+      "PleaseEnter": "Please enter",
+      "Bank": "Bank",
+      "Branch": "Branch",
+      "PleaseSelect": "Please select",
+      "AddnewWallet": "Add new wallet",
+      "WalletAddress": "Wallet address",
+      "PaymentChain": "Payment chain",
+      "CardManagement": "Card management",
+      "WalletManagement": "Wallet management",
+      "Submit": "Submit",
+      "Max5Card": "Up to five bank cards can be bound",
+      "DelCardMsg": "Are you sure you want to delete this bank card?",
+      "DelWalletMsg": "Are you sure you want to delete this bank card?",
+      "13to19Msg": "Please enter a number between 13 and 19 digits.",
+      "12to50Msg": "Please enter a number between 12 and 50 digits.",
+      "AddedSuccessfully": "Added successfully",
+      "Hint": "Hint"
+    },
+    "TradingOrder": {
+      "TradingVarieties": "Trading varieties",
+      "Type": "Type",
+      "OpeningTime": "Opening time (system time)",
+      "ClosingTime": "Closing time(system time)",
+      "LotSize": "Lot size",
+      "OpeningPrice": "Opening price",
+      "ClosingPrice": "Closing price",
+      "ProfitAndLossUSD": "Profit and loss USD",
+      "TradingOrder": "Trading order",
+      "OrderType": "Order type",
+      "ClosedOrders": "Closed orders",
+      "OpenOrders": "Open orders",
+      "OrderNumber": "Order number",
+      "Comment": "Comment",
+      "CommissionAgent": "Commission agent",
+      "OvernightInterest": "Overnight interest",
+      "TradingAccount": "Trading account",
+      "Total": "Total",
+      "Items": "items",
+      "CreateDate": "Create date"
+    },
+    "DepositAndWithdrawalReport": {
+      "DepositAndWithdrawalReport": "Deposit and Withdrawal Report",
+      "OrderType": "Order type",
+      "ClosedOrders": "Closed orders",
+      "OpenOrders": "Open orders",
+      "CreateDate": "Create date",
+      "TradingOrder": "Trading order",
+      "TradingAccount": "Trading account",
+      "Date": "Date",
+      "Time": "Time",
+      "Type": "Type",
+      "Comment": "Comment",
+      "AmountUSD": "Amount USD",
+      "Total": "Total",
+      "Items": "items",
+      "Deposit": "Deposit",
+      "Withdrawal": "Withdrawal",
+      "DeductionPhysical": "Deduction for physical goods",
+      "Status": "Deposit and withdrawal processing status",
+      "FailCause": "Reason for failure",
+      "ApprovalStatus": "Approval Status",
+      "All": "All",
+      "PendingApproval": "Pending approval",
+      "UnderReview": "Under review",
+      "ApprovalPassed": "Approval passed",
+      "ApprovalRejected": "Approval rejected",
+      "OtherReasons": "Other reasons",
+      "Reject": "Reject",
+      "PaymentGatewayReason": "Payment gateway reason",
+      "InsufficientFunds": "Insufficient funds",
+      "Requesting": "Requesting",
+      "Processing": "Processing",
+      "Finish": "Finish",
+      "TransactionFailed": "Transaction failed",
+      "TradingWallet": "Trading wallet"
+    },
+    "LowerLevelCustomers": {
+      "CustomerList": "Customer list",
+      "CustomerType": "Customer type",
+      "BiCode": "BI code",
+      "ChineseName": "Chinese name",
+      "EnglishName": "English name",
+      "MtAccount": "MT Account",
+      "RebateAmount": "Rebate amount",
+      "Balance": "Balance",
+      "TradingVarieties": "Trading varieties",
+      "Type": "Type",
+      "OpeningTime": "Opening time (system time)",
+      "ClosingTime": "Closing time(system time)",
+      "LotSize": "Lot size",
+      "OpeningPrice": "Opening price",
+      "ClosingPrice": "Closing price",
+      "ProfitAndLossUSD": "Profit and loss USD",
+      "TradingOrder": "Trading order",
+      "OrderType": "Order type",
+      "ClosedOrders": "Closed orders",
+      "OpenOrders": "Open orders",
+      "TradingAccount": "Trading account",
+      "CreateDate": "Create date",
+      "State": "State",
+      "ApprovalStatus": "Approval Status",
+      "PendingApproval": "Pending approval",
+      "ApprovalPassed": "Approval passed",
+      "ApprovalRejected": "Approval rejected",
+      "DepositAndWithdrawalReport": "Deposit and Withdrawal Report",
+      "Date": "Date",
+      "Time": "Time",
+      "Comment": "Comment",
+      "AmountUSD": "Amount USD",
+      "Total": "Total",
+      "Items": "items",
+      "Deposit": "Deposit",
+      "Withdrawal": "Withdrawal",
+      "DeductionPhysical": "Deduction for physical goods",
+      "Status": "Deposit and withdrawal processing status",
+      "FailCause": "Reason for failure",
+      "OtherReasons": "Other reasons",
+      "Reject": "Reject",
+      "PaymentGatewayReason": "Payment gateway reason",
+      "InsufficientFunds": "Insufficient funds",
+      "Requesting": "Requesting",
+      "Processing": "Processing",
+      "Finish": "Finish",
+      "TransactionFailed": "Transaction failed",
+      "TradingWallet": "Trading wallet",
+      "Trader": "Trader",
+      "Partners": "Partners",
+      "FilterAccounts": "Filter accounts",
+      "All": "All"
+    },
+    "PersonalInfoWrite": {
+      "PlaceOfResidence": "Place of residence",
+      "PleaseSelect": "Please select",
+      "DocumentType": "Document type",
+      "UploadDocuments": "Upload documents",
+      "ClickToUploadTheFrontPictureOfYourIdCard": "Upload the front picture of ID card",
+      "ClickToUploadTheBackOfYourIdCard": "Upload the back of ID card",
+      "ClickToUploadPhotoFrontPassport": "Upload the front of passport",
+      "ClickToUploadPassportInformationPicture": "Upload passport information picture",
+      "IdNumber": "ID number",
+      "PleaseEnter": "Please enter",
+      "ChineseName": "Chinese name",
+      "ChineseSurname": "Chinese surname",
+      "EnglishName": "English name",
+      "EnglishSurname": "English surname",
+      "OnlyNumbersCanBeEntered": "Only numbers can be entered",
+      "Email": "Email",
+      "PhoneNumber": "Phone number",
+      "DateOfBirth": "Date of birth",
+      "Address": "Address",
+      "Submit": "Submit",
+      "BottomSpanMsg": "After clicking Submit, the information will be locked and cannot be modified again, pending background review.",
+      "PersonalData": "Personal data",
+      "Cancel": "Cancel",
+      "Confirm": "Confirm",
+      "BindEmail": "Bind email",
+      "BindMobile": "Bind phone number",
+      "IdCard": "ID card",
+      "Passport": "Passport",
+      "ModifyEmail": "ModifyEmail",
+      "ModifyPhoneMumber": "ModifyPhoneNumber",
+      "Required": "Required",
+      "ChineseNa": "Chinese name",
+      "EnglishNa": "English name",
+      "AddingEmailMsg": "Adding or modifying an email address requires email verification",
+      "PleaseSelectRegion": "Please select a region",
+      "PleaseEnterMobilePhoneNumber": "Please enter mobile phone number",
+      "PleaseSelectTime": "Please select a time",
+      "ResidentialAddress": "Residential address",
+      "ResidentStatus": "Resident status",
+      "PleaseUploadDocuments": "Please upload documents",
+      "SubmissionSuccessful": "Submission successful!",
+      "TheDocumentUploadFailed": "The document upload failed, please delete and upload again",
+      "TheCertificateIsBeingMsg": "The certificate is being uploaded. Please wait.",
+      "EmailVerificationMsg": "Adding or modifying an email address requires email verification",
+      "UnderReview": "Under review",
+      "CustomerServiceInformationReviewed": "Customer service information is being reviewed, please wait patiently",
+      "Dismissed": "Dismissed",
+      "ReasonForRejection": "Reason for rejection:",
+      "Resubmit": "Resubmit",
+      "RejectionMsg": "If rejected, you need to modify the information again and submit it again. After submission, the information will be locked and cannot be modified again, waiting for background review.",
+      "LockedInfoMsg": "After clicking Submit, the information will be locked and cannot be modified again, pending background review.",
+      "OperationSuccessful": "Operation successful",
+      "Create": "Create",
+      "View": "View",
+      "Edit": "Edit",
+      "Review": "Review",
+      "CustomerReview": "Customer review",
+      "RealNameAuthentication": "Real name authentication",
+      "SuccessfullyOpened": "Successfully opened",
+      "MobilePhoneVerification": "Mobile phone verification",
+      "EmailVerification": "Email verification"
+    },
+    "ChangePassword": {
+      "PleaseEnterPassword": "Please enter password",
+      "Cancel": "Cancel",
+      "Submit": "Submit",
+      "EnterExistingPassword": "Enter existing password",
+      "EnterNewPassword": "Enter new password",
+      "ReEnterNewPassword": "Re-enter new password",
+      "RequiredMsg": "8-15 characters, including at least one uppercase and lowercase letter, number, and special character",
+      "ChangePassword": "Change password",
+      "PasswordsDifferentMsg": "The passwords you entered twice do not match!",
+      "ModificationSuccessful": "Modification successful!",
+      "ModificationFailed": "Modification failed!",
+      "PleaseConfirmPassword": "Please confirm password",
+      "8to15Msg": "The password must be 8-15 characters long",
+      "NeedUppercaseMsg": "Password must contain at least one uppercase letter",
+      "NeedLowercaseMsg": "The password must contain at least one lowercase letter",
+      "NeedOneNumMsg": "The password must contain at least one number",
+      "NeedOneSpecialMsg": "The password must contain at least one special character"
+    }
+  },
+  "Menus": {
+    "Title1": "Analysis ",
+    "Title2": "Once Upon a Time ",
+    "Title3": "Market Characteristics ",
+    "Title4": "Logical Framework ",
+    "Title5": "Practical Resources ",
+    "Title6": "Promotion ",
+    "Title7": "Latest Events ",
+    "Title8": "Invite Friends ",
+    "Title9": "VIP Service ",
+    "Title10": "Network Marketing ",
+    "Title11": "Products",
+    "Title12": "Contract Conditions ",
+    "Title13": "Account Type ",
+    "Title14": "Funds access ",
+    "Title15": "Charge ",
+    "Title16": "Tools ",
+    "Title17": "MetaTrader 5",
+    "Title18": "Demo Account ",
+    "Title19": "VPS",
+    "Title20": "About ",
+    "Title21": "Announcement ",
+    "Title22": "Operation Mode ",
+    "Title23": "Regulatory Qualification ",
+    "Title24": "Legal Documents"
+  },
+  "Common": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "sendSuccess": "send successfully",
+    "loading": "Loading...",
+    "updateIteration": "Product update cycle, please look forward to!"
+  },
+  "Service": {
+    "CreateTradingAccountSuccess": "Create trading account successful.",
+    "FailedToDealBalance": "Failed to banlance",
+    "InvalidTradingGroup": "Invalid trading group",
+    "InvalidTradingLeverage": "Invalid trading leverage",
+    "TradingGroupIsRequired": "Trading group is required.",
+    "TradingLeverageIsRequired": "Trading leverage is required.",
+    "TradingMasterPasswordIsRequired": "Trading master password is required",
+    "NoRegistrationInformation": "No registration information has been set.",
+    "NoRegionalInformation": "No regional information has been set.",
+    "NoEmailCode": "No Email Code has been set.",
+    "NoCaptchaCode": "No Captcha Code has been set.",
+    "NoEnvironmentVariables": "No environment variables has been set.",
+    "CodeIsRequired": "Code is required.",
+    "LoginTypeIsRequired": "Login type is required.",
+    "PasswordIsRequired": "Password is required.",
+    "RegionalInformationIsRequired": "Regional information is required.",
+    "MobileOrEmailIsRequired": "Mobile or Email is required.",
+    "MobileIsRequired": "Mobile is required.",
+    "EmailCodeIsRequired": "Email Code is required.",
+    "CaptchaCodeIsRequired": "Captcha Code is required.",
+    "FamilyNameIsRequired": "FamilyName is required.",
+    "GivenNameIsRequired": "GivenName is required.",
+    "FirstNameIsRequired": "FirstName is required.",
+    "LastNameIsRequired": "LastName is required.",
+    "IDNumberIsRequired": "ID number is required.",
+    "DocumentTypeIsRequired": "DocumentType is required.",
+    "PlaceOfResidenceIsRequired": "Place of residence is required.",
+    "CertificateAddressIsRequired": "Certificate address is required.",
+    "DateOfBirthIsRequired": "Date of birth is required.",
+    "TradingAccountIsRequired": "No trading account.",
+    "CreditCardsIsRequired": "CreditCard is required.",
+    "WalletAddrIsRequired": "Wallet address is required.",
+    "FileTypeIsRequired": "File Type is required",
+    "FilePathsIsRequired": "File path is required",
+    "AllFieldsRequired": "All fields are required.",
+    "InvalidLoginMethod": "Login method is not valid.",
+    "InvalidInviteCode": "Invitation code is not valid.",
+    "InvalidEmail": "The email is not valid.",
+    "InvalidMobile": "The moblie number is not valid.",
+    "InvalidCaptcha": "The Captcha is not valid.",
+    "InvalidEmailCode": "The Email Code is not valid.",
+    "InvalidToken": "Token is invalid.",
+    "InvalidIDNumber": "The ID number is not in compliance.",
+    "InvalidPassport": "The passport number is not in compliance.",
+    "InvalidDocumentType": "The document type is not in compliance. ",
+    "InvalidBankInfo": "The bank information is not valid.",
+    "InvalidWalletInfo": "The wallet information is not valid.",
+    "InvalidBankCardNumber": "Bank card number is not valid.",
+    "InvalidWalletAddr": "Wallet address is not valid.",
+    "InvalidDepositAmount": "The deposit amount cannot be less than 1 USD.",
+    "InvalidWithdrawalAmount": "The withdrawal amount cannot be less than 0 USD.",
+    "InvalidFileType": "The file type is not valid.",
+    "InvalidOriginalPassword": "The original password is not valid.",
+    "InvalidPayMethod": "Invalid payment method",
+    "InvalidDate": "Invalid date",
+    "EmailIsVerified": "The email has been verified.",
+    "MobileIsVerified": "The mobile has been verified.",
+    "AccountIsVerified": "The account has been verified.",
+    "FailedToGenerateToken": "Failed to generate token.",
+    "FailedToGenerateCaptcha": "Failed to generate captcha.",
+    "FailedToBindBankCard": "Failed to bind bank card,please check bank card information.",
+    "FailedToCheckout": "Failed to checkout",
+    "FailedToConnectService": "Failed to connect to the service",
+    "AccountAlreadyExists": "This account already exists.",
+    "UnregisteredAccount": "Unregistered account.",
+    "WrongAccountOrPassword": "Wrong account or password.",
+    "EmailCodeMismatch": "Email Code mismatch.",
+    "CaptchaCodeMismatch": "Captcha Code mismatch.",
+    "Matched": "Matched",
+    "CheckCodeFailed": "CheckCode failed.",
+    "SendEmailFailed": "Send email failed.",
+    "SendSMSFailed": "Send SMS failed.",
+    "OpenMT5AccountFailed": "Failed to open MT5 account, please contact the administrator.",
+    "HighFrequency": "The sending frequency is too high, please try again later.",
+    "Banned": "You have sent too many text messages and have been temporarily banned. Please contact the administrator and try again later.",
+    "TwilioSuccess": "Twilio sent successfully, pending verification.",
+    "IDNumberHasBeenAuthenticated": "This ID number has been authenticated",
+    "WithdrawalAmount": "The withdrawal amount cannot be greater than the available amount",
+    "AccountComplete": "Supplementary verification method account already has a complete account.",
+    "AccountHasRealName": "Supplementary verification method Already have a real-name account.",
+    "VerifyAccountFirst": "Please verify your account's email and phone number first.",
+    "RealNameAccountFirst": "The account has not passed the real-name authentication.",
+    "UnselectedFile": "Unselected file.",
+    "FileTypeInvalid": "Only files of type .pdf, .png, .jpg are allowed to be uploaded",
+    "CashflowNotFound": "Cashflow not found",
+    "CannotExceed5": "The number of bank cards cannot exceed 5",
+    "TradingAccountIsExist": "The trading account already exists. You can create up to two real accounts.",
+    "BadRequest": "BadRequest.",
+    "LoginFailed": "Login failed, please log in again.",
+    "Unauthorized": "Unauthorized",
+    "ServiceUnavailable": "ServiceUnavailable.",
+    "InternalServerError": "InternalServerError.",
+    "NotFound": "NotFound.",
+    "GatewayTimeout": "GatewayTimeout.",
+    "VerificationCodeSubject": "RRBULL Verification Code",
+    "VerificationCodeHtmlContent": "<p>Dear RRBULL user,</p><p>Welcome to use RRBULL's services! please use the following verification code:</p><p><strong>Verification Code: {emailCode}</strong></p><p>This code is valid for {minutes} minutes.</p><p>If you did not request this verification code, please ignore this email.</p><p>Should you have any questions or need assistance, feel free to contact us anytime.</p><p>DoNotReply@rrbullgold.com</p><p>Sincerely</p><p>RRBULL Team</p>",
+    "VerificationCodePlainTextContentUser": "Dear RRBULL user,",
+    "VerificationCodePlainTextWelcome": "Welcome to use RRBULL's services! please use the following verification code:",
+    "VerificationCodePlainTextEmailCode": "Verification Code: {emailCode}",
+    "VerificationCodePlainTextExpiredTime": "This code is valid for {minutes} minutes.",
+    "VerificationCodePlainTextIgnore": "If you did not request this verification code, please ignore this email.",
+    "VerificationCodePlainTextHelp": "Should you have any questions or need assistance, feel free to contact us anytime.",
+    "VerificationCodePlainTextEmail": "DoNotReply@rrbullgold.com",
+    "VerificationCodePlainTextSincerely": "Sincerely,",
+    "VerificationCodePlainTextTeam": "RRBULL Team",
+    "TradingAccountSubject": "RRBULL Congratulations on Completing Your Live Account Registration!",
+    "TradingAccountHtmlContent": "<p>Dear RRBULL user,</p><p>Your MT5 live trading account has been successfully created!</p><p>Trading Account: <strong>{loginId}</strong></p><p>Main Password: <strong>{masterPassword}</strong></p><p>Investor Password: <strong>{investorPassword}</strong></p><p>For the security of your account, please do not share your passwords with anyone to avoid potential losses.</p><p>If you encounter any issues while logging in or changing your password, please feel free to contact us anytime.</p><p>DoNotReply@rrbullgold.com</p><p>Wishing you successful trading!</p><p>Sincerely</p><p>RRBULL Team</p>",
+    "TradingAccountPlainTextContentUser": "Dear RRBULL user,",
+    "TradingAccountPlainTextCreated": "Your MT5 live trading account has been successfully created!",
+    "TradingAccountPlainTextTradingAccount": "Trading Account: {loginId}",
+    "TradingAccountPlainTextMainPassword": "Main Password: {masterPassword}",
+    "TradingAccountPlainTextInvestorPassword": "Investor Password: {investorPassword}",
+    "TradingAccountPlainTextSecurity": "For the security of your account, please do not share your passwords with anyone to avoid potential losses.",
+    "TradingAccountPlainTextHelp": "If you encounter any issues while logging in or changing your password, please feel free to contact us anytime.",
+    "TradingAccountPlainTextEmail": "DoNotReply@rrbullgold.com",
+    "TradingAccountPlainTextSuccess": "Wishing you successful trading!",
+    "TradingAccountPlainTextSincerely": "Sincerely,",
+    "TradingAccountPlainTextTeam": "RRBULL Team",
+    "Success": "Success.",
+    "TwilioSendSuccess": "Twilio sent successfully, pending verification.",
+    "EmailSendSuccess": "Email sent successfully",
+    "LoginSuccess": "Login successful.",
+    "RegisterSuccess": "Register successful.",
+    "FileUploadSuccess": "File uploaded successfully.",
+    "WithdrawalApplicationSuccess": "Withdrawal application successful.",
+    "SMSSendSuccess": "SMS verification code sent successfully.",
+    "CannotApplyForIB": "The current account cannot apply for agency",
+    "NoSMSCode": "No mobile verification code",
+    "SMSCodeIsRequired": "Mobile verification code is required",
+    "InvalidSMSCode": "Invalid mobile verification code",
+    "SMSCodeMismatch": "Mobile verification code does not match",
+    "TimeoutSMSCode": "Mobile verification code expired",
+    "TimeoutEmailCode": "Email verification code expired"
+  }
+}

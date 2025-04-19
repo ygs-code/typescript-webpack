@@ -1,0 +1,53 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  /* stylelint-disable */
+  scrollbar-3dlight-color: #d4d0c8; /* - 最外左 - */
+  scrollbar-highlight-color: #fff; /* - 左二 - */
+  scrollbar-face-color: #e4e4e4; /* - 面子 - */
+  scrollbar-arrow-color: #666; /* - 箭头 - */
+  scrollbar-shadow-color: #808080; /* - 右二 - */
+  scrollbar-darkshadow-color: #d7dce0; /* - 右一 - */
+  scrollbar-base-color: #d7dce0; /* - 基色 - */
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 8px;
+  height: 8px;
+  background-color: transparent;
+  transition: all 0.5s;
+}
+
+/* ::-webkit-scrollbar-track {
+
+//   background-color: transparent;
+// }
+
+// ::-webkit-scrollbar-track-piece {
+//   background-color: transparent;
+//   // width: 4px;
+  } */
+
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.6);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(128, 128, 128, 1);
+}
+
+
+body {
+  overflow: hidden;
+}

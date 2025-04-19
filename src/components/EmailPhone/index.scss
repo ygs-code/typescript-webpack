@@ -1,0 +1,24 @@
+.email-phone {
+     
+    .flex {
+        display: flex;
+    }
+
+    .select-region {
+        width: 120px;
+        position: relative;
+    }
+
+    .input-box {
+        flex: 1;
+    }
+}
+
+.mentions-box {
+    
+
+    textarea {
+        height: 40px;
+        line-height: 28px !important;
+    }
+}

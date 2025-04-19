@@ -1,0 +1,115 @@
+/* .user-role-details {
+  width: 100%;
+  display: -webkit-box !important;
+  display: -moz-box !important;
+  -webkit-box-orient: vertical !important;
+  -moz-box-orient: vertical !important;
+  -ms-box-orient: vertical !important;
+
+  &-tree-content {
+    width: 700px;
+    border: 1px solid #f0f0f0;
+  }
+} */
+.details-form-main {
+  .main-input {
+   /*  .ant-input {
+      height: 40px;
+    } */
+  }
+  .content-num {
+    vertical-align: baseline;
+    /* 让span标签行内元素沿基线对齐 */
+    color: #a8abb0;
+    padding-left: 12px;
+
+    .num-left {
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .num-right {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  .input-span-div {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 400;
+
+    .input-span-require {
+      color: #f00;
+    }
+
+    .input-span-content {
+      color: #a8abb0;
+    }
+  }
+
+  .multiple-inputs-div {
+    display: flex;
+
+    .multiple-inputs {
+      width: calc(50% - 6px);
+    }
+
+    .multiple-inputs:not(:first-child) {
+      margin-left: 12px;
+    }
+  }
+
+  .id-card-upload-main {
+    display: flex;
+    margin-bottom: 16px;
+
+    .id-card-upload-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 235px;
+      height: 200px;
+      border-radius: 4px;
+
+      .id-card-upload-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 8px;
+
+        .id-card-upload-span {
+          margin-left: 8px;
+          color: #a8abb0;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .id-card-upload-box:not(:first-child) {
+      margin-left: 12px;
+    }
+  }
+
+  /* upload组件已上传图片容器 */
+  .ant-upload-list-item-container {
+    width: 235px !important;
+    height: 195px !important;
+  }
+
+  /* 点击上传容器 */
+  .ant-upload-select {
+    width: 236px !important;
+    height: 198px !important;
+    background-color: #fff;
+  }
+
+  .multiple-buttons-div {
+    display: flex;
+  }
+  .phone-input-main {
+    .ant-input {
+      height: 40px;
+    }
+  }
+}

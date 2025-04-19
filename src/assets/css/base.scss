@@ -1,0 +1,64 @@
+@import url("./variable.scss");
+
+
+.theme-color {
+  color: $theme-color;
+}
+
+.ant-modal-body {
+  padding: 0;
+}
+
+.center-box {
+  width: 1400px;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 使用css3的transform来实现 */
+}
+
+.ant-message {
+  .anticon {
+    top: -2px;
+  }
+}
+
+.ant-pagination {
+  .ant-pagination-item-link {
+    .anticon {
+      svg {
+        margin-top: -7px;
+      }
+    }
+  }
+}
+
+
+
+.ant-layout-sider {
+
+  .ant-layout-sider-trigger {
+
+    border-radius: 10px;
+    background: white;
+
+    svg {
+      color: rgb(212, 167, 103);
+    }
+  }
+
+  .ant-layout-sider-trigger:hover {
+    background: rgb(240, 236, 232);
+
+    svg {
+      color: rgb(51, 49, 49);
+    }
+  }
+}
