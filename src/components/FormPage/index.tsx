@@ -9,21 +9,42 @@
 import './index.scss';
 
 import { Button, Spin } from 'antd';
-import { v4 as uuidv4 } from "uuid"
+import { v4 as uuidv4 } from 'uuid';
 import Form from '@/components/Form';
 import React, { PureComponent } from 'react';
 
+interface History {
+  back(): void;
+}
 
-class Index extends PureComponent {
-  form = {};
+interface IndexProps {
+  history: History & Record<string, any>;
+  match?: {
+    params?: {
+      action?: string;
+      id?: string;
+    };
+  };
+}
+interface IndexState {
+  loading: boolean;
+  sourceData: Record<string, any>;
+  reloadId: string;
+  open?: boolean;
+}
+
+class Index<Props = {}, State = {}> extends PureComponent<
+  IndexProps,
+  IndexState
+> {
+  form: { validateFields?: () => Promise<any> } = {};
   action = 'add';
-  constructor(props) {
-
+  constructor(props: any) {
     super(props);
     this.state = {
       loading: true,
-      sourceData: {},
-      reloadId: uuidv4()
+      sourceData: {} as Record<string, any>,
+      reloadId: uuidv4(),
     };
   }
   // defaultState = () => {
@@ -35,7 +56,7 @@ class Index extends PureComponent {
   /**
    * 用于将form的字段值转换为接口需要的格式
    */
-  public mapSubmitData = (formData) => {
+  public mapSubmitData = (formData: Record<string, any>) => {
     return formData;
   };
 
@@ -43,20 +64,20 @@ class Index extends PureComponent {
    * 用于将从接口获取到的初始化数据，转换成form需要的格式
    * 这个函数需要在getInitData中手动调用，因此函数名不限于mapInitData
    */
-  public mapInitData = async (initData) => {
-
-
-    return initData
+  public mapInitData = async (
+    initData: Record<string, any>
+  ): Promise<Record<string, any>> => {
+    return initData;
   };
 
   onReload = () => {
     setTimeout(() => {
       this.setState({
         loading: true,
-        reloadId: uuidv4()
-      })
-    }, 100)
-  }
+        reloadId: uuidv4(),
+      });
+    }, 100);
+  };
   // 验证表单
   onValidaForm = async (parameter = {}) => {
     const { validateFields } = this.form;
@@ -76,11 +97,9 @@ class Index extends PureComponent {
           }).catch((error) => {
             throw error;
           });
-
-
         })
         .catch((error) => {
-          reject(error)
+          reject(error);
           this.setState({
             loading: false,
           });
@@ -89,12 +108,12 @@ class Index extends PureComponent {
       this.setState({
         loading: false,
       });
-    })
+    });
   };
 
   //    提交请求到接口
-  onSubmitForm = async (formData) => {
-    const data = await this.mapSubmitData(formData);
+  onSubmitForm = async (formData: Record<string, any>): Promise<void> => {
+    const data: Record<string, any> = await this.mapSubmitData(formData);
   };
 
   // 初始化表单
@@ -102,7 +121,7 @@ class Index extends PureComponent {
     return await this.mapInitData({});
   };
   // 获取字段
-  getFields = (): { type: string; title: string; items: any[] }[] => {
+  getFields = (): Object[] => {
     return [];
   };
   // 底部按钮
@@ -111,7 +130,7 @@ class Index extends PureComponent {
       match: {
         params: { action },
       },
-      history = {},
+      history,
     } = this.props;
 
     const { loading } = this.state;
@@ -120,9 +139,12 @@ class Index extends PureComponent {
     return (
       <div className="button-box">
         {!readOnly ? (
-          <Button type="primary" loading={loading} onClick={() => {
-            this.onValidaForm()
-          }}>
+          <Button
+            type="primary"
+            loading={loading}
+            onClick={() => {
+              this.onValidaForm();
+            }}>
             确认
           </Button>
         ) : null}
@@ -137,10 +159,7 @@ class Index extends PureComponent {
     );
   };
   renderForm = (props = {}) => {
-    const { loading, initLoading, reloadId } = this.state;
-
-
-    console.log('loading=====', loading)
+    const { loading, reloadId } = this.state;
 
     return (
       <div className="form-page-component">
@@ -152,24 +171,17 @@ class Index extends PureComponent {
               fields={this.getFields()}
               onReady={this.onFormReady}
               initialValues={async () => {
-                const {
-                  match: {
-                    params: { id } = {},
-                  } = {},
-                } = this.props;
+                const { match: { params: { id } = {} } = {} } = this.props;
                 this.setState(() => {
                   return {
                     loading: true,
                   };
                 });
 
-
-
                 let values =
-                  id === undefined && this.action == 'add' ? {} : await this.getInitialValues();
-
-
-
+                  id === undefined && this.action == 'add'
+                    ? {}
+                    : await this.getInitialValues();
 
                 this.setState({
                   sourceData: values,
@@ -190,7 +202,7 @@ class Index extends PureComponent {
       </div>
     );
   };
-  onFormReady = (form) => {
+  onFormReady = (form: { validateFields?: () => Promise<any> }) => {
     this.form = form;
   };
 
@@ -208,12 +220,10 @@ class Index extends PureComponent {
   }
 }
 
-
-
-
-export default Index
-
+export default Index;
 
 export {
-  Index as FormPage
-}
+  Index as FormPage,
+  IndexState as FormPageState,
+  IndexProps as FormPageProps,
+};
