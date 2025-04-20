@@ -26,5 +26,5 @@
     "moduleResolution": "node"
   },
   "include": ["src/**/*", "typings.d.ts" , "types/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules","src/router/**/*","src/router/*",]
 }

@@ -1178,6 +1178,84 @@ console.log(greeter.getName()); // John
 
 
 
+
+
+####  **使用类型断言**
+
+如果你确信 `@classDecorator` 装饰器会为类添加 getName 方法，可以通过类型断言告诉 TypeScript：
+
+```
+
+interface Greeter {
+  getName(): string;
+}
+
+ 
+
+const classDecorator = (options: Object) => {
+  return (Target: new (...args: any[]) => any): new (...args: any[]) => any => {
+    return class extends Target  {
+      name: string;
+      age: number;
+      constructor(name: string, age: number) {
+        super(name, age);
+        this.name = name;
+        this.age = age;
+        console.log('sealed');
+      }
+      getName() {
+        return this.name;
+      }
+    };
+  };
+};
+
+@classDecorator({})
+class Greeter implements Greeter {
+  name: string;
+  age: number;
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+  getAge() {
+    return this.age;
+  }
+}
+
+let greeter = new Greeter('John', 30);
+// John
+(greeter as unknown as Greeter).getName()
+
+ 
+
+```
+
+在调用 [getName](vscode-file://vscode-app/e:/Microsoft VS Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html) 的地方，将 `this` 转换为Greeter 类型。例如：
+
+```
+(greeter as unknown as Greeter).getName()
+```
+
+或者
+
+#### **忽略类型检查**
+
+如果以上方法都无法解决问题，可以暂时通过 `// @ts-ignore` 忽略类型检查：
+
+```
+// @ts-ignore
+greeter.getName()
+```
+
+
+
+
+
+
+
+
+
 # d.ts 使用
 
 声明类型  

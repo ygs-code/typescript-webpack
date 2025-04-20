@@ -155,7 +155,7 @@ export default [
     exact: true,
     name: "decorator",
     entry: "/pages/Decorator/index",
-    level: 2,
+    level: 1,
   },
 
 

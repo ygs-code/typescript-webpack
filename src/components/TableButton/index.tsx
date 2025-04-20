@@ -6,13 +6,26 @@
  * @FilePath: /scrm-fe/src/components/TableButton/index.jsx
  * @Description:
  */
-import "./styles.scss";
+import './styles.scss';
 
-import {Popconfirm} from "antd";
-import React, {useCallback} from "react";
+import { Popconfirm } from 'antd';
+import React, { useCallback, forwardRef } from 'react';
 
-export default React.forwardRef((props, ref) => {
-  const {render} = props;
+interface RenderItem {
+  status: boolean;
+  label: string;
+  showPopconfirm?: boolean;
+  confirmInfo?: string;
+  props?: React.HTMLAttributes<HTMLSpanElement>;
+  color?:string;
+}
+
+interface PropsType {
+  render: Array<RenderItem>;
+}
+
+export default (props: PropsType) => {
+  const { render } = props;
   return (
     <ul className="table-button">
       {render
@@ -24,12 +37,11 @@ export default React.forwardRef((props, ref) => {
             delete item.props.onClick;
           }
           return (
-            <li key={index + "table-button"}>
+            <li key={index + 'table-button'}>
               {item.showPopconfirm ? (
                 <Popconfirm
                   title={item.confirmInfo || `您确定要${item.label}吗？`}
-                  onConfirm={onClick}
-                >
+                  onConfirm={onClick}>
                   <span {...item.props}>{item.label}</span>
                 </Popconfirm>
               ) : (
@@ -40,4 +52,4 @@ export default React.forwardRef((props, ref) => {
         })}
     </ul>
   );
-});
+};

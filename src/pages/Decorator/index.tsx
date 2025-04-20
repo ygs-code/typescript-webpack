@@ -7,31 +7,8 @@ import { addRouterApi } from 'src/router';
 import React, { Component, JSX } from 'react';
 import { mapRedux } from '@/redux';
 import dayjs from 'dayjs';
-import $Test from './test';
-
-
-console.log('$Test==',$Test)
-
-
- 
-
-interface TestState {
-  name: string;
-}
-
-//
-interface TestProps {
-  age: number;
-}
-
-interface Column {
-  title: string;
-  dataIndex: string;
-  key: string;
-  fixed?: 'left' | 'right';
-  width?: number;
-  render?: (text: any, row: any) => JSX.Element;
-}
+import type { TableProps } from 'antd';
+// import $Test from './test';
 
 interface IndexProps {
   pushRoute: (params: {
@@ -45,39 +22,41 @@ interface IndexProps {
   };
 }
 
-//
+interface IndexState {}
 
-// react  state 和 props
-class Test extends Component<TestProps, TestState> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      name: 'Test',
-    };
-  }
-
-  render() {
-    const { age } = this.props;
-    return <div>{this.state.name}</div>;
-  }
+interface IndexHasType {
+  loadTableData(): Promise<any>;
+  renderSearch: Function;
+  renderTabs: Function;
+  renderTable: Function;
 }
 
-// // // 权限控制
-// @setBreadcrumbAndTitle((props) => {
-//   return {
-//     //设置面包屑和标题
-//     breadcrumb: [
-//       {
-//         label: "日历"
-//       }
-//     ],
-//     title: "日历"
-//   }
-// }
-// )
-// @addRouterApi<React.ComponentType>
-@(tablePage<React.ComponentType>)
-class Index extends Component<IndexProps> {
+interface DataType {
+  key: string;
+  name: string;
+  marketClose: number; // Added marketClose property
+  importance: string; // Added importance property
+  // age: number;
+  // address: string;
+  // tags: string[];
+}
+
+//  权限控制
+@setBreadcrumbAndTitle((props: any) => {
+  return {
+    //设置面包屑和标题
+    breadcrumb: [
+      {
+        label: '日历',
+      },
+    ],
+    title: '日历',
+  };
+})
+// @ts-ignore
+@addRouterApi
+@tablePage
+class Index extends Component<IndexProps, IndexState> {
   tabsValueKey: string = 'publishStatus';
 
   constructor(props: any) {
@@ -251,7 +230,7 @@ class Index extends Component<IndexProps> {
                   props: {
                     onClick: async () => {
                       message.success('发布成功');
-                      this.loadTableData();
+                      (this as unknown as IndexHasType).loadTableData();
                     },
                   },
                 },
@@ -294,7 +273,8 @@ class Index extends Component<IndexProps> {
                   props: {
                     onClick: async () => {
                       message.success('删除成功');
-                      this.loadTableData();
+                      // this.loadTableData();
+                      (this as unknown as IndexHasType).loadTableData();
                     },
                   },
                 },
@@ -303,7 +283,7 @@ class Index extends Component<IndexProps> {
           );
         },
       },
-    ] as Column[];
+    ] as TableProps<DataType>['columns'];
   };
 
   /**
@@ -317,6 +297,8 @@ class Index extends Component<IndexProps> {
   ) => {
     const { date, ...more } = searchParams;
     const [startDate, endDate] = date || [undefined, undefined];
+
+    console.log('searchParams==', searchParams);
 
     // const {
     //   data: { resultList: list, ...otherData },
@@ -335,7 +317,7 @@ class Index extends Component<IndexProps> {
       pageNumber: 1,
       pageSize: 10,
       total: 0,
-      list: [],
+      list: [] as Array<{ [key: string]: any }>,
     };
   };
 
@@ -367,15 +349,15 @@ class Index extends Component<IndexProps> {
           </Button>
         </div>
 
-        {this.renderSearch({
+        {(this as unknown as IndexHasType).renderSearch({
           // shrinkLength: 5,
           // initialValues: {
           //   type: ""
           // }
         })}
 
-        {this.renderTabs()}
-        {this.renderTable({
+        {(this as unknown as IndexHasType).renderTabs()}
+        {(this as unknown as IndexHasType).renderTable({
           rowKey: 'reference',
           scroll: {
             x: 1300,

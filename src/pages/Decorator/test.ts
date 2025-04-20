@@ -52,8 +52,8 @@ let myIdentity3: {<T>(arg: T): T} = identity;
 console.log('myIdentity1=', myIdentity1(123))  
 console.log('myIdentity2=', myIdentity2(123))  
 console.log('myIdentity3=', myIdentity3(123))  
- 
-debugger
+  
+
 
 
 // 继承接口
@@ -224,7 +224,7 @@ c.method('id');
 // console.log(greeter.getName()); // John
 
 interface Greeter {
-  getName(): string;
+  // getName(): string;
 }
 
 const classDecorator = (options: Object) => {
