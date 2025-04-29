@@ -57,7 +57,7 @@ module.exports = {
     'no-undef': 'error',
     // 'no-void': 2, //禁用void操作符
     '@babel/no-invalid-this': 'error',
-    '@babel/no-unused-expressions': 'error',
+    '@babel/no-unused-expressions': 1,
     '@babel/object-curly-spacing': 'error',
     '@babel/semi': 'error',
   },

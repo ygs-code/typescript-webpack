@@ -186,6 +186,19 @@ export default [
       },
     ],
   },
+
+ 
+
+  
+
+  {
+    path: "/react-range-picker",
+    name: "ReactRangePicker",
+    entry: "/pages/ReactRangePicker/index.tsx",
+    level: 1
+  }
+  
+
   // {
   //   path: "/demo",
   //   name: "demo",

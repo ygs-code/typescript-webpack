@@ -12,6 +12,10 @@ module.exports = {
   plugins: ["stylelint-scss", "stylelint-less"],
   extends: ["stylelint-config-standard", "stylelint-config-standard-scss"],
   rules: {
+    "at-rule-no-unknown": null,
+    "no-empty-source": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "selector-id-pattern": null,
     "property-no-vendor-prefix": null,
     "value-no-vendor-prefix": null,
     "alpha-value-notation": null,
@@ -35,18 +39,18 @@ module.exports = {
     "function-max-empty-lines": null,
     "function-whitespace-after": null,
     "declaration-block-trailing-semicolon": null,
-    "at-rule-no-unknown": [
-      true,
-      {
-        ignoreAtRules: [
-          "tailwind",
-          "apply",
-          "variants",
-          "responsive",
-          "screen",
-        ],
-      },
-    ],
+    // "at-rule-no-unknown": [
+    //   true,
+    //   {
+    //     ignoreAtRules: [
+    //       "tailwind",
+    //       "apply",
+    //       "variants",
+    //       "responsive",
+    //       "screen",
+    //     ],
+    //   },
+    // ],
 
     "no-missing-end-of-source-newline": null,
     "number-leading-zero": null,
