@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DatePicker from '@/components/ReactRangePicker';
-
-
+import TimePicker from './TimePicker/src';
+import './index.css';
 
 const PickerWithCustomePlaceholder = ({ onDateSelect }) => {
   const placeholder = ({ startDate, endDate }) => {
@@ -85,21 +85,30 @@ class App extends Component {
     render() {
       return (
         <div style={{ overflow: 'auto' ,height: '100vh'}}>
-          {/* <div>
+         <div>
             <DatePicker
               onDateSelected={this.onDateSelect}
               defaultValue={{
-                startDate: new Date('2020-01-05'),
-                endDate: ''
+                // startDate:    new Date('2020-01-05'),
+                // endDate: ''
               }}
               onClose={this.onClose}
               onOpen={() => console.log(' openend')}
-              // dateFormat="DD-MM-YYYY h:miA"
+              // dateFormat="MMMM dd  YYYY @ h:mi A"
+              dateFormat="DD-MM-YYYY h:miA"
               // disableRange
-              // rangeTillEndOfDay
-              // selectTime
+              rangeTillEndOfDay
+              selectTime
             />
           </div>
+
+          <br />
+
+          <div>
+
+          <TimePicker />
+          </div>
+
           <div>
             <h2> With custom footer</h2>
             <DatePicker
@@ -152,7 +161,7 @@ class App extends Component {
             />
           </div>
           <br />
-          <div>
+          {/* <div>
             <h1> Controlled visibility </h1>
             <div 
             // style={{
@@ -160,12 +169,12 @@ class App extends Component {
             // }}
             
             >
-              { <ControlledVisibility /> 
+                <ControlledVisibility /> 
             </div>
         
-          </div>
-          <br /> */}
-          <PickerWithCustomePlaceholder onDateSelect={this.onDateSelect} />
+          </div> */}
+          <br />  
+          {/* <PickerWithCustomePlaceholder onDateSelect={this.onDateSelect} /> */}
         </div>
       );
     }

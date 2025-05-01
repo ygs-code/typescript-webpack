@@ -51,11 +51,14 @@ const Footer = ({
   }
   return (
     <div className="default-footer">
+      {/* 如果没有选择时间 */}
       {!fDate && !lDate && <div className="hint">Select a date/range</div>}
+
       {!!fDate && (
         <div className="selected-dates">
           <div className="date-heading"> Selected Date </div>
           <div className={`holder-wrapper${!lDate ? ' center-items' : ''}`}>
+            {/* 开始时间 */}
             {fDate && (
               <DateHolder
                 heading={lDate ? 'From' : ''}
@@ -63,9 +66,10 @@ const Footer = ({
                 time={fDateTime}
               />
             )}
+            {/* 结束日期 */}
             {lDate && (
               <DateHolder
-                extraClass="second"
+                // extraClass="second"
                 heading="To"
                 date={lDate}
                 time={lDateTime}
@@ -74,6 +78,7 @@ const Footer = ({
           </div>
         </div>
       )}
+      {/* 按钮 */}
       <Buttons
         disableSelect={!fDate && !lDate}
         onToday={onToday}

@@ -12,6 +12,7 @@ module.exports = {
   plugins: ["stylelint-scss", "stylelint-less"],
   extends: ["stylelint-config-standard", "stylelint-config-standard-scss"],
   rules: {
+    "max-line-length": null,
     "at-rule-no-unknown": null,
     "no-empty-source": null,
     "declaration-block-no-redundant-longhand-properties": null,

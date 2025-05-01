@@ -1,5 +1,9 @@
+#__range-picker-container{
+  overflow: visible;
+  background: red;
+}
 .default-footer {
-  height: 125px;
+  height: auto;
   display: flex;
   flex-direction: column;
   .hint {
@@ -20,9 +24,7 @@
     flex: 1;
   }
   .holder-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+ 
     &.center-items {
       justify-content: center;
     }
@@ -32,6 +34,7 @@
         font-size: 80%;
         color: #3d4852;
       }
+      
       &.second .heading {
         text-align: right;
       }

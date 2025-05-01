@@ -36,6 +36,7 @@ module.exports = {
   //   "warn" or 1 - 将规则视为一个警告（不会影响退出码）,只警告，不会退出程序
   //   "error" or 2 - 将规则视为一个错误 (退出码为1)，报错并退出程序
   rules: {
+    "no-unsafe-negation": 1,
     "@babel/new-cap": 1,
     "new-cap": 1,
     'react/prop-types': 'off',
