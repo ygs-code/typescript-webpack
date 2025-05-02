@@ -14,11 +14,14 @@ class Grids extends React.Component {
       onDateSelect,
       rangeEnabled
     } = this.props;
+    // btn btn-outline ripple
     return (
       <div className="grids">
         <div className={'animation-helper ' + animationClass}>
           <div className="month prev">
+            {/* 高阶组件 */}
             <ControlledUpdate shouldUpdate={Boolean(animationClass)}>
+              {/*  */}
               <DateGrid
                 date={prevMonth}
                 onDateSelect={onDateSelect}

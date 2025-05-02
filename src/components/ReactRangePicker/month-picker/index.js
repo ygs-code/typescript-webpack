@@ -20,7 +20,7 @@ const MonthPicker = ({
               key={index}
               className={`select-item${index === disabled ? ' disabled' : ''}${
                 index === selected ? ' selected' : ''
-              }`}
+              }   btn btn-outline ripple`}
               onClick={e => onClick(month, index)}
             >
               {' '}

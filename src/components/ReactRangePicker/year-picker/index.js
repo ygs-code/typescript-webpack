@@ -6,7 +6,7 @@ import './index.scss';
 class YearPicker extends React.Component {
   years_to_display = 12;
   state = {
-    year: null,
+    year: undefined,
     years: []
   };
 
@@ -49,12 +49,12 @@ class YearPicker extends React.Component {
     return (
       <div className={`year-picker${visible ? ' visible' : ' hidden'}`}>
         <div className="navigator">
-          <button className="arrow prev" onClick={e => this.onYearChange(-1)} />
+          <button className="arrow prev btn btn-outline ripple" onClick={e => this.onYearChange(-1)} />
           <div className="values">
             {' '}
             {sartYear} - {endYear}
           </div>
-          <button className="arrow next" onClick={e => this.onYearChange(1)} />
+          <button className="arrow next btn btn-outline ripple" onClick={e => this.onYearChange(1)} />
         </div>
         <div className="year-grid">
           {years.map((yearItem, index) => {
@@ -63,7 +63,7 @@ class YearPicker extends React.Component {
                 key={index}
                 className={`year-container${
                   year === yearItem ? ' selected' : ''
-                }`}
+                } btn btn-outline ripple`}
                 onClick={() => onChange(yearItem)}
               >
                 {' '}

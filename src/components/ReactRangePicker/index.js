@@ -12,7 +12,6 @@ import {Provider} from './context';
    onClose (function) - 'when your pressed ok/select button in footer'
    disableRange (boolean) - 'if true user can select only one single'
    selectTime (boolean) - if true time picker will show up each time a date gets selected
-   rangeTillEndOfDay (boolean) - if true end(last) date of range will have time of 11:59 PM(end of day) else it will have 12:00
    selectTime(boolean) - show time picker if true after very date selection
 
    placeholder (function which return a React Component) - if user wants custom placeholder, placeholder function will recieve following object as param
@@ -60,11 +59,11 @@ class RangePicker extends React.Component {
     // 监听鼠标点击事件，关闭日历
     // 关闭日历的条件是：点击的不是日历本身，并且日历是打开的状态
     // 鼠标按下事件
-    window.addEventListener('mousedown', this.handleOutsideClick, false);
+    // window.addEventListener('mousedown', this.handleOutsideClick, false);
 
     
     // 鼠标移动事件
-    popup && popup.addEventListener('mousedown', this.preventBubbling, false);
+    // popup && popup.addEventListener('mousedown', this.preventBubbling, false);
 
     // force upate as style in render function won't get calculated because "calendar_ref.current" was null
     // on componentDidMount "calendar_ref.current" will be available, so force rerender the component
@@ -78,9 +77,9 @@ class RangePicker extends React.Component {
   componentWillUnmount() {
     const {current: popup} = this.popup_ref;
     // 销毁事件
-    window.removeEventListener('mousedown', this.handleOutsideClick, false);
-    popup &&
-      popup.removeEventListener('mousedown', this.preventBubbling, false);
+    // window.removeEventListener('mousedown', this.handleOutsideClick, false);
+    // popup &&
+    //   popup.removeEventListener('mousedown', this.preventBubbling, false);
   }
 
   preventBubbling = e => {
@@ -149,9 +148,14 @@ class RangePicker extends React.Component {
 
   // 选择日期
   onDateSelected = (startDate, endDate) => {
+
+
+    // 选中日期
     const {onDateSelected} = this.props;
     const firstDate = startDate ? startDate._date : null;
     const lastDate = endDate ? endDate._date : null;
+
+
     onDateSelected && onDateSelected(firstDate, lastDate);
   };
 

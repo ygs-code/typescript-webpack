@@ -25,8 +25,15 @@ const DD = (str, date) => str.replace('DD', days[date.day].short);
 const MM = (str, date) => str.replace('MM', date.monthNameShort);
 const YYYY = (str, date) => str.replace('YYYY', date.year);
 
+
+
+ 
+
+
+
 const DDDD = (str, date) => str.replace('DDDD', days[date.day].full);
 const MMMM = (str, date) => str.replace('MMMM', date.monthNameFull);
+
 
 const a = (str, date) => str.replace('a', date.period.toLowerCase());
 

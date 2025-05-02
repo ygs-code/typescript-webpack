@@ -8,13 +8,13 @@ export class Provider extends React.Component {
     // 今天
     today: new Date(),
     // 开始日期
-    startDate: null,
+    startDate: undefined,
     // 结束日期
-    endDate: null,
+    endDate: undefined,
     // 开始时间
-    startTime: null,
-    // 结束时间
-    endTime: null
+    // startTime: undefined,
+    // // 结束时间
+    // endTime: undefined
   };
   // 更新上下文
   updateContext = partialState => {

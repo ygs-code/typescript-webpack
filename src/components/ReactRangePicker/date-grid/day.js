@@ -12,13 +12,23 @@ const Day = ({
   offHover,
   rangeEnabled
 }) => {
+
   const isSelected = !!selected && currentDate === selected;
   const isSelected2 = !!selected2 && currentDate === selected2;
+
+
+  // console.log('selected==',selected);
+  // console.log('selected2==',selected2);
+
+
+  // 增加class
 
   let dayContainerClass = 'day-container';
   dayContainerClass += isToday ? ' today' : '';
   dayContainerClass += isSelected ? ' selected' : '';
+
   if (rangeEnabled) {
+
     const isHovered =
       !!selected &&
       !selected2 &&
@@ -26,25 +36,29 @@ const Day = ({
       (hoveredPrev
         ? currentDate < selected && currentDate > hovered
         : currentDate > selected && currentDate < hovered);
+
+
     const isInSelectedRanges =
       !!selected &&
       !!selected2 &&
       currentDate > selected &&
       currentDate < selected2;
+
+    //  选中
     const showHoverEffect = isInSelectedRanges || isHovered;
 
+
+    
     dayContainerClass += isSelected2 ? ' selected' : '';
 
     // if both dates are same don't add first/second class it will give weired effect at the selected date
     if (selected !== selected2) {
-      dayContainerClass +=
-        isSelected && (!!hovered || (!hovered && !!selected && !!selected2))
-          ? ' first'
-          : '';
-      dayContainerClass +=
-        isSelected2 || (isSelected && !selected2 && hoveredPrev)
-          ? ' second'
-          : '';
+
+      // 开始
+      dayContainerClass += isSelected && (!!hovered || (!hovered && !!selected && !!selected2))? ' first' : '';
+
+      // 结束
+      dayContainerClass += isSelected2 || (isSelected && !selected2 && hoveredPrev)  ? ' second' : '';
     }
 
     dayContainerClass +=
@@ -53,9 +67,12 @@ const Day = ({
         : '';
 
     if (isSelected || isSelected2 || (selected && hovered === currentDate)) {
+
       if (!!selected && !!selected2 && hovered) {
+
         dayContainerClass += ' next';
       } else {
+
         dayContainerClass += hoveredPrev
           ? ' prev'
           : hovered !== selected
@@ -63,6 +80,8 @@ const Day = ({
             : '';
       }
     }
+
+    
     dayContainerClass += showHoverEffect ? ' hovered' : '';
   }
 
@@ -74,7 +93,8 @@ const Day = ({
       onMouseEnter={e => onHover(currentDate)}
       onMouseLeave={offHover}
     >
-      <div className="day">
+      {/* 天组件 */}
+      <div className="day btn btn-outline ripple">
         <span>{day}</span>
       </div>
     </div>

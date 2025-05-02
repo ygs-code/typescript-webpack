@@ -12,18 +12,18 @@ const Navigator = ({
 }) => {
   return (
     <div className="navigator">
-      <button className="arrow prev" onClick={e => onMonthChange(-1)} />
+      <button className="arrow prev btn btn-outline ripple" onClick={e => onMonthChange(-1)} />
       <div className="values">
-        <button className="month" onClick={onSelectMonth}>
+        <button className="month btn btn-outline ripple" onClick={onSelectMonth}>
           {' '}
           {month}{' '}
         </button>
-        <button className="year" onClick={onSelectYear}>
+        <button className="year btn btn-outline ripple" onClick={onSelectYear}>
           {' '}
           {year}{' '}
         </button>
       </div>
-      <button className="arrow next" onClick={e => onMonthChange(1)} />
+      <button className="arrow next btn btn-outline ripple" onClick={e => onMonthChange(1)} />
     </div>
   );
 };

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Trigger from 'rc-trigger';
+// import Trigger from 'rc-trigger';
 import moment from 'moment';
 import classNames from 'classnames';
 import Panel from './Panel';
 import placements from './placements';
+import '../assets/index.less';
 
 function noop() {}
 
@@ -28,20 +29,29 @@ class Picker extends Component {
     showHour: true,
     showMinute: true,
     showSecond: true,
+    // 受控组件 禁用时间
     disabledHours: noop,
+    // 受控组件 禁用分钟
     disabledMinutes: noop,
+    // 受控组件 禁用秒
     disabledSeconds: noop,
     hideDisabledOptions: false,
     placement: 'bottomLeft',
+    //受控组件选中事件
     onChange: noop,
     onAmPmChange: noop,
+    //打开弹窗函数
     onOpen: noop,
+    // 关闭函数
     onClose: noop,
+    // 表单元素
     onFocus: noop,
+    // 表单元素
     onBlur: noop,
     addon: noop,
     use12Hours: false,
     focusOnOpen: false,
+    // 键盘事件
     onKeyDown: noop,
   };
 
@@ -49,7 +59,12 @@ class Picker extends Component {
     super(props);
     this.saveInputRef = refFn.bind(this, 'picker');
     this.savePanelRef = refFn.bind(this, 'panelInstance');
-    const { defaultOpen, defaultValue, open = defaultOpen, value = defaultValue } = props;
+    const {
+      defaultOpen,
+      defaultValue,
+      open = defaultOpen,
+      value = defaultValue,
+    } = props;
     this.state = {
       open,
       value,
@@ -72,22 +87,22 @@ class Picker extends Component {
       : null;
   }
 
-  onPanelChange = value => {
+  onPanelChange = (value) => {
     this.setValue(value);
   };
 
-  onAmPmChange = ampm => {
+  onAmPmChange = (ampm) => {
     const { onAmPmChange } = this.props;
     onAmPmChange(ampm);
   };
 
-  onClear = event => {
+  onClear = (event) => {
     event.stopPropagation();
     this.setValue(null);
     this.setOpen(false);
   };
 
-  onVisibleChange = open => {
+  onVisibleChange = (open) => {
     this.setOpen(open);
   };
 
@@ -96,8 +111,7 @@ class Picker extends Component {
     this.focus();
   };
 
-  onKeyDown = e => {
-    // 键盘按下
+  onKeyDown = (e) => {
     if (e.keyCode === 40) {
       this.setOpen(true);
     }
@@ -120,15 +134,23 @@ class Picker extends Component {
     }
 
     if (use12Hours) {
-      const fmtString = [showHour ? 'h' : '', showMinute ? 'mm' : '', showSecond ? 'ss' : '']
-        .filter(item => !!item)
+      const fmtString = [
+        showHour ? 'h' : '',
+        showMinute ? 'mm' : '',
+        showSecond ? 'ss' : '',
+      ]
+        .filter((item) => !!item)
         .join(':');
 
       return fmtString.concat(' a');
     }
 
-    return [showHour ? 'HH' : '', showMinute ? 'mm' : '', showSecond ? 'ss' : '']
-      .filter(item => !!item)
+    return [
+      showHour ? 'HH' : '',
+      showMinute ? 'mm' : '',
+      showSecond ? 'ss' : '',
+    ]
+      .filter((item) => !!item)
       .join(':');
   }
 
@@ -189,7 +211,14 @@ class Picker extends Component {
   }
 
   getPopupClassName() {
-    const { showHour, showMinute, showSecond, use12Hours, prefixCls, popupClassName } = this.props;
+    const {
+      showHour,
+      showMinute,
+      showSecond,
+      use12Hours,
+      prefixCls,
+      popupClassName,
+    } = this.props;
     let selectColumnCount = 0;
     if (showHour) {
       selectColumnCount += 1;
@@ -207,9 +236,10 @@ class Picker extends Component {
     return classNames(
       popupClassName,
       {
-        [`${prefixCls}-panel-narrow`]: (!showHour || !showMinute || !showSecond) && !use12Hours,
+        [`${prefixCls}-panel-narrow`]:
+          (!showHour || !showMinute || !showSecond) && !use12Hours,
       },
-      `${prefixCls}-panel-column-${selectColumnCount}`,
+      `${prefixCls}-panel-column-${selectColumnCount}`
     );
   }
 
@@ -238,7 +268,8 @@ class Picker extends Component {
 
   renderClearButton() {
     const { value } = this.state;
-    const { prefixCls, allowEmpty, clearIcon, clearText, disabled } = this.props;
+    const { prefixCls, allowEmpty, clearIcon, clearText, disabled } =
+      this.props;
     if (!allowEmpty || !value || disabled) {
       return null;
     }
@@ -259,8 +290,7 @@ class Picker extends Component {
         className={`${prefixCls}-clear`}
         title={clearText}
         onClick={this.onClear}
-        tabIndex={0}
-      >
+        tabIndex={0}>
         {clearIcon || <i className={`${prefixCls}-clear-icon`} />}
       </a>
     );
@@ -290,49 +320,58 @@ class Picker extends Component {
     } = this.props;
     const { open, value } = this.state;
     const popupClassName = this.getPopupClassName();
-    return (
-      <Trigger
-        prefixCls={`${prefixCls}-panel`}
-        popupClassName={popupClassName}
-        popupStyle={popupStyle}
-        popup={this.getPanelElement()}
-        popupAlign={align}
-        builtinPlacements={placements}
-        popupPlacement={placement}
-        action={disabled ? [] : ['click']}
-        destroyPopupOnHide
-        getPopupContainer={getPopupContainer}
-        popupTransitionName={transitionName}
+    console.log('prefixCls===', prefixCls);
+    return open ? (
+      <div className="yf-react-range-time-picker">
+        <div className='box'>
+          {this.getPanelElement()}
 
-        
-        popupVisible={open}
+          <button class="select btn btn-outline ripple  select-but"> Select </button>
+        </div>
+
+        {/* <Trigger
+          prefixCls={`${prefixCls}-panel`}
+          popupClassName={popupClassName}
+          popupStyle={popupStyle}
+          popup={this.getPanelElement()}
+          popupAlign={align}
+          builtinPlacements={placements}
+          popupPlacement={placement}
+          action={disabled ? [] : ['click']}
+          destroyPopupOnHide
+          getPopupContainer={getPopupContainer}
+          popupTransitionName={transitionName}
+          popupVisible={open}
+          onPopupVisibleChange={this.onVisibleChange}>
+          <span className={classNames(prefixCls, className)} style={style}>
+
+            <input
+              className={classNames(`${prefixCls}-input`, inputClassName)}
+              ref={this.saveInputRef}
+              type="text"
+              placeholder={placeholder}
+              name={name}
+              onKeyDown={this.onKeyDown}
+              disabled={disabled}
+              value={(value && value.format(this.getFormat())) || ''}
+              autoComplete={autoComplete}
+              onFocus={onFocus}
+              onBlur={onBlur}
+              autoFocus={autoFocus} // eslint-disable-line jsx-a11y/no-autofocus
+              onChange={noop}
+              readOnly={!!inputReadOnly}
+              id={id}
+            />
 
 
-        onPopupVisibleChange={this.onVisibleChange}
-      >
-        <span className={classNames(prefixCls, className)} style={style}>
-          <input
-            className={classNames(`${prefixCls}-input`, inputClassName)}
-            ref={this.saveInputRef}
-            type="text"
-            placeholder={placeholder}
-            name={name}
-            onKeyDown={this.onKeyDown}
-            disabled={disabled}
-            value={(value && value.format(this.getFormat())) || ''}
-            autoComplete={autoComplete}
-            onFocus={onFocus}
-            onBlur={onBlur}
-            autoFocus={autoFocus} // eslint-disable-line jsx-a11y/no-autofocus
-            onChange={noop}
-            readOnly={!!inputReadOnly}
-            id={id}
-          />
-          {inputIcon || <span className={`${prefixCls}-icon`} />}
-          {this.renderClearButton()}
-        </span>
-      </Trigger>
-    );
+            {inputIcon || <span className={`${prefixCls}-icon`} />}
+            {this.renderClearButton()}
+
+
+          </span>
+        </Trigger> */}
+      </div>
+    ) : null;
   }
 }
 

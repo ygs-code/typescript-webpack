@@ -9,16 +9,17 @@ import './index.scss';
 class DateGrid extends Component {
   actualDate = new Date();
   daysPerPage = 42;
-  state = {hovered: null};
+  state = {hovered: undefined};
 
   onDateSelect = date => {
+    // 选中时间
     const {onDateSelect} = this.props;
     onDateSelect && onDateSelect(date);
   };
 
   onHover = date => {
     const {startDate} = this.props.provider;
-    const selected = startDate ? startDate._intDate : null;
+    const selected = startDate ? startDate._intDate : undefined;
     if (!this.props.rangeEnabled || !selected) return;
     this.setState({
       hovered: date
@@ -29,7 +30,7 @@ class DateGrid extends Component {
     if (!this.props.rangeEnabled || !this.state.selected || !this.state.hovered)
       return;
     this.setState({
-      hovered: null
+      hovered: undefined
     });
   };
 
@@ -71,21 +72,31 @@ class DateGrid extends Component {
     const {date, rangeEnabled, provider} = this.props;
     const {hovered} = this.state;
     const {startDate, endDate} = provider;
-    const selected = startDate ? startDate._intDate : null;
-    const selected2 = endDate ? endDate._intDate : null;
+
+    const selected = startDate ? startDate._intDate : undefined;
+
+    const selected2 = endDate ? endDate._intDate : undefined;
+
+
+
+
     let tempDate = date;
     if (!tempDate) {
       tempDate = new Date();
     }
+
     const dateObj = getCustomDateObject(tempDate);
     const {month, year} = dateObj;
     const actualDate = dateToInt(getCustomDateObject(this.actualDate));
     const days = getDaysArray(dateObj);
     const prevMonthDays = this.getRemainingPrevMonthDays(dateObj);
+
     const hoveredPrev = !!selected && !!hovered && hovered < selected;
+
     const nextMonthDays = this.getRemainingNextMonthDays(
       prevMonthDays.length + days.length
     );
+
 
     return (
       <div className="date-grid-container">
@@ -95,7 +106,9 @@ class DateGrid extends Component {
         <div className="date-grid">
           <PreviousMonthDays days={prevMonthDays} />
           {days.map((day, index) => {
+
             const currentDate = dateToInt({date: day, month, year});
+
             return (
               <Day
                 key={index}

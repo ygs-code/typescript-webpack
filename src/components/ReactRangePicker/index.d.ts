@@ -18,7 +18,6 @@ export interface Props {
   onClose?: Function;
   closeOnSelect?: boolean;
   disableRange?: boolean;
-  rangeTillEndOfDay?: boolean;
   placeholder?: (Dates) => React.Component;
   placeholderText?: string;
   dateFormat?: string;

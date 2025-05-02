@@ -118,10 +118,9 @@
   border-width: 0 1px;
   margin-left: -1px;
   box-sizing: border-box;
- 
   max-height: 144px;
-  overflow-y: auto;
   position: relative;
+  overflow: hidden;
 }
 .rc-time-picker-panel-select-active {
   overflow-y: auto;

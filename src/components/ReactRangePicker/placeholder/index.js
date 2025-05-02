@@ -2,17 +2,18 @@ import React from 'react';
 import './index.scss';
 import {formatDate} from '@/components/ReactRangePicker/utils';
 import Context from '../context';
+import dayjs from 'dayjs';
 
 const Placeholder = ({
   showTime = false,
   customPlaceholder,
   placeholder,
   format,
-  provider
+  provider,
 }) => {
   const {startDate, endDate} = provider;
-  const s_date = startDate ? startDate.customObject : null,
-    e_date = endDate ? endDate.customObject : null;
+  const s_date = startDate ? startDate : undefined,
+    e_date = endDate ? endDate : undefined;
 
   if (customPlaceholder) {
     const {_date: _startDate} = startDate || {};
@@ -39,12 +40,21 @@ const Placeholder = ({
 };
 
 const DateAndTime = ({date, format, showTime}) => {
-  if (!date) return null;
+  if (!date) return undefined;
   const _format = showTime ? 'dd-mm-yyyy h:mi A' : 'dd-mm-yyyy';
-  const dateStr = formatDate(format || _format, date);
+
+  console.log('date11==', date);
+  // import dayjs from 'dayjs';
+
+  // dayjs(_date).format('YYYY-MM-DD HH:mm:ss');
+
+  const dateStr = ''; //formatDate(format || _format, date);
   return (
     <React.Fragment>
-      <span className="date"> {dateStr} </span>
+      <span className="date">
+        {' '}
+        {dayjs(date._date).format('YYYY-MM-DD HH:mm:ss')}{' '}
+      </span>
     </React.Fragment>
   );
 };
@@ -58,16 +68,18 @@ const CalendarIcon = () => {
         <div className="hook" />
       </div>
       <div className="date-dots">
-        {dateDots.map((dot, index) => <div key={index} className="dot" />)}
+        {dateDots.map((dot, index) => (
+          <div key={index} className="dot" />
+        ))}
       </div>
     </div>
   );
 };
 
-export default function(props) {
+export default function (props) {
   return (
     <Context.Consumer>
-      {provider => <Placeholder {...props} provider={provider} />}
+      {(provider) => <Placeholder {...props} provider={provider} />}
     </Context.Consumer>
   );
 }

@@ -38,13 +38,21 @@
       &.second .heading {
         text-align: right;
       }
-      .date {
-        font-size: 80%;
+      .date-box {
         font-weight: 500;
         margin-top: 7px;
+        font-size: 15px;
+    
+        .date{
+          cursor: pointer;
+          margin-right: 10px;
+          display: inline-block;
+        }
         .time {
-          font-size: 79%;
           font-weight: initial;
+          font-size: 15px;
+          cursor: pointer;
+          display: inline-block;
         }
       }
     }
