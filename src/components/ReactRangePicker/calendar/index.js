@@ -21,10 +21,7 @@ import Footer from '../footer';
 import Context from '../context';
 import './index.scss';
 
- 
-
 import dayjs from 'dayjs';
-
 
 import TimePicker from '../TimePicker/src';
 
@@ -54,6 +51,7 @@ const END_DATE_TIME_END_OF_DAY = {
   // period: 'PM',
 };
 
+// 获取默认值
 function getDefaultValues(date) {
   if (!date) return undefined;
 
@@ -81,16 +79,102 @@ class Calander extends React.Component {
     showMonthPopup: false,
     showYearPopup: false,
     showTimePopup: false,
+
+    startTime: dayjs(),
+    endTime: dayjs(),
+
+    onChangeTimeKey: 'startTime',
+  };
+
+  setDate = (dateDay) => {
+    // const {onChangeTimeKey, startTime, endTime} = this.state;
+
+    // const {provider = {}} = this.props;
+
+    // const {startDate, endDate} = provider;
+
+    const [hours, minutes, seconds] = [
+      dayjs(dateDay).format('HH'),
+      dayjs(dateDay).format('mm'),
+      dayjs(dateDay).format('ss'),
+    ];
+
+    // let date1Time = {
+    //   hours,
+    //   minutes,
+    //   seconds,
+    // };
+
+    // startDate.customObject = {
+    //   ...startDate.customObject,
+    //   hours,
+    //   minutes,
+    //   seconds,
+    // };
+
+    // startDate._date.setHours(hours);
+    // startDate._date.setMinutes(minutes);
+    // startDate._date.setSeconds(seconds);
+
+    // this.setState({
+    //   date1Time,
+    // });
+    // provider.updateContext({
+    //   startDate,
+    //   endDate,
+    // });
+    // } else {
+    //   const [hours, minutes, seconds] = [
+    //     dayjs(endTime).format('HH'),
+    //     dayjs(endTime).format('mm'),
+    //     dayjs(endTime).format('ss'),
+    //   ];
+    //   let date2Time = {
+    //     hours,
+    //     minutes,
+    //     seconds,
+    //   };
+
+    //   endDate.customObject = {
+    //     ...endDate.customObject,
+    //     hours,
+    //     minutes,
+    //     seconds,
+    //   };
+
+    //   endDate._date.setHours(hours);
+    //   endDate._date.setMinutes(minutes);
+    //   endDate._date.setSeconds(seconds);
+    //   this.setState({
+    //     date2Time,
+    //   });
+    //   provider.updateContext({
+    //     startDate,
+    //     endDate,
+    //   });
+    // }
   };
 
   componentDidMount() {
-    const {defaultValue, disableRange, provider} = this.props;
+    const {defaultValue, disableRange, provider, value = []} = this.props;
+
+    console.log('value====', value);
+
+    // 是否是双联
     this.enable_range = disableRange !== true;
+
+    // 开始日期
     let startDate = getDefaultValues(
-      defaultValue ? defaultValue.startDate : undefined
+      value[0]
+        ? new Date(dayjs(value[0]).format('YYYY-MM-DD HH:mm:ss'))
+        : undefined
     );
+
+    // 结束日期
     let endDate = getDefaultValues(
-      defaultValue ? defaultValue.endDate : undefined
+      value[1]
+        ? new Date(dayjs(value[1]).format('YYYY-MM-DD HH:mm:ss'))
+        : undefined
     );
 
     if (endDate && !startDate) {
@@ -100,12 +184,22 @@ class Calander extends React.Component {
       return;
     }
 
-    if (startDate) {
+    if (value[0]) {
       provider.updateContext({
         startDate,
         endDate,
       });
       this.setState({...this.state, date: startDate._date});
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const {value: prevValue} = prevProps;
+
+    const value = this.props.value || this.props.defaultValue;
+
+    if (value && value !== prevValue) {
+      console.log(1);
     }
   }
 
@@ -185,34 +279,13 @@ class Calander extends React.Component {
 
   // 选中日期
   onDateSelect = (date) => {
-    console.log('date===', date);
-
-    // 可以转
-    console.log(
-      'day===',
-      dayjs(date + ' 00:00:00').format('YYYY-MM-DD HH:mm:ss')
-    );
-    // debugger;
-
-    /*
-
-const date1 = dayjs('2019-01-25')
-const date2 = dayjs('2018-06-05')
-date1.diff(date2) // 20214000000 default milliseconds
-
-
-*/
-
     const {
       onDateSelected = noHandler(),
-      selectTime,
+      showTime,
       provider,
       onClose,
       closeOnSelect,
     } = this.props;
-
-    console.log('this.props.provider==', this.props.provider);
-
     const {showTimePopup} = this.state;
 
     // 获取开始时间和结束时间
@@ -235,28 +308,31 @@ date1.diff(date2) // 20214000000 default milliseconds
       // 结束时间
       date2Time,
     };
-
-    console.log('newState==', newState);
-
-    console.log('this.enable_range==', this.enable_range);
-    console.log('date==', date);
-
     // 不是双联的
     if (!this.enable_range && !!date) {
       // 显示时间组件
       // this.setState({
-      //   showTimePopup: selectTime ? true : showTimePopup,
+      //   showTimePopup: showTime ? true : showTimePopup,
       // });
+
+      let startDate = getActualDate(date, date1Time);
 
       // 设置开始日期
       provider.updateContext({
-        startDate: getActualDate(date, date1Time),
+        startDate,
+      });
+
+   
+
+      this.setState({
+        startTime: dayjs(startDate._date),
+        // endTime: dayjs(_endDate._date),
       });
 
       // 选中开始日期
       onDateSelected(getActualDate(date, date1Time));
 
-      !selectTime && closeOnSelect && onClose();
+      !showTime && closeOnSelect && onClose(this.props.provider);
 
       return;
     }
@@ -296,7 +372,7 @@ date1.diff(date2) // 20214000000 default milliseconds
       const date2 = dayjs(date + ' ' + endTime);
 
       console.log('diff==', date1.diff(date2));
-      // debugger;
+     
 
       // if (date < selectedDate1) {
 
@@ -319,14 +395,6 @@ date1.diff(date2) // 20214000000 default milliseconds
         newState.selectedDate1 = date;
         // 结束
         newState.selectedDate2 = selectedDate1;
-
-        // let temp = {
-        //   ...newState.date1Time,
-        // };
-
-        // newState.date1Time = newState.date2Time;
-        // newState.date2Time = temp;
-
       } else {
         newState.selectedDate2 = date;
       }
@@ -346,9 +414,10 @@ date1.diff(date2) // 20214000000 default milliseconds
     // 获取开始日期还是结束日期  问题在于这里
     const _startDate = getActualDate(d1, date1Time);
 
-
     // 结束日期
     const _endDate = getActualDate(d2, date2Time);
+
+
 
 
     // 设置开始日期 和 结束日期
@@ -357,13 +426,33 @@ date1.diff(date2) // 20214000000 default milliseconds
       endDate: _endDate,
     });
 
+    console.log('_startDate===', _startDate._date);
+    console.log('endDate===', _endDate._date);
+
+    console.log(
+      '_startDate1===',
+      dayjs(_startDate._date).format('YYYY-MM-DD HH:mm:ss')
+    );
+
+    console.log(
+      '_endDate2===',
+      dayjs(_endDate._date).format('YYYY-MM-DD HH:mm:ss')
+    );
+
+    this.setState({
+      startTime: dayjs(_startDate._date),
+      endTime: dayjs(_endDate._date),
+    });
+    // startTime: dayjs(),
+    // endTime: dayjs(),
+
     // 选中的时间
     onDateSelected(_startDate, _endDate);
 
-    if (selectTime) {
+    if (showTime) {
       // this.showTime();
-    } else if (!selectTime && d2) {
-      closeOnSelect && onClose();
+    } else if (!showTime && d2) {
+      closeOnSelect &&  onClose(this.props.provider);
     }
   };
 
@@ -372,7 +461,7 @@ date1.diff(date2) // 20214000000 default milliseconds
     if (this.is_animating === true) return;
 
     const {date} = this.state;
-    const {selectTime, onDateSelected, provider, onClose, closeOnSelect} =
+    const {showTime, onDateSelected, provider, onClose, closeOnSelect} =
       this.props;
     const savedDate = getCustomDateObject(date);
     const currentDate = getCustomDateObject(new Date(this.actualDate));
@@ -410,9 +499,14 @@ date1.diff(date2) // 20214000000 default milliseconds
       endDate: lDate,
     });
 
+    this.setState({
+      startTime: dayjs(fDate._date),
+      endTime: dayjs(lDate._date),
+    });
+
     if (onDateSelected) {
       onDateSelected(fDate, lDate);
-      closeOnSelect && onClose();
+      closeOnSelect &&  onClose(this.props.provider);
     }
 
     // added timeout of same time as animation, so after the animation is done we can remove the animation class
@@ -424,7 +518,7 @@ date1.diff(date2) // 20214000000 default milliseconds
         },
         () => {
           this.is_animating = false;
-          if (!this.enable_range && !!selectTime) {
+          if (!this.enable_range && !!showTime) {
             // this.showTime();
           }
         }
@@ -432,22 +526,98 @@ date1.diff(date2) // 20214000000 default milliseconds
     }, 500);
   };
 
-  showTime = () => {
- 
+  showTime = (onChangeTimeKey) => {
     this.setState({
       showTimePopup: true,
+      onChangeTimeKey,
     });
   };
 
   closeTime = () => {
-   
     this.setState({
       showTimePopup: false,
     });
   };
 
   onTimeSelected = (hours, minutes, period) => {
+    const {onChangeTimeKey, startTime, endTime} = this.state;
+
+    const {provider = {}} = this.props;
+
+    const {startDate, endDate} = provider;
+    if (onChangeTimeKey == 'startTime') {
+      const [hours, minutes, seconds] = [
+        dayjs(startTime).format('HH'),
+        dayjs(startTime).format('mm'),
+        dayjs(startTime).format('ss'),
+      ];
+
+      let date1Time = {
+        hours,
+        minutes,
+        seconds,
+      };
+
+      startDate.customObject = {
+        ...startDate.customObject,
+        hours,
+        minutes,
+        seconds,
+      };
+
+      startDate._date.setHours(hours);
+      startDate._date.setMinutes(minutes);
+      startDate._date.setSeconds(seconds);
+      this.setState({
+        date1Time,
+      });
+      provider.updateContext({
+        startDate,
+        endDate,
+      });
+    } else {
+      const [hours, minutes, seconds] = [
+        dayjs(endTime).format('HH'),
+        dayjs(endTime).format('mm'),
+        dayjs(endTime).format('ss'),
+      ];
+      let date2Time = {
+        hours,
+        minutes,
+        seconds,
+      };
+
+      endDate.customObject = {
+        ...endDate.customObject,
+        hours,
+        minutes,
+        seconds,
+      };
+
+      endDate._date.setHours(hours);
+      endDate._date.setMinutes(minutes);
+      endDate._date.setSeconds(seconds);
+      this.setState({
+        date2Time,
+      });
+      provider.updateContext({
+        startDate,
+        endDate,
+      });
+    }
+
+    // this.setState({
+    //   [onChangeTimeKey]
+    // })
+
+    /*
+    
+   
+
+
     const {onDateSelected, provider, closeOnSelect, onClose} = this.props;
+
+
     let {date1Time, date2Time} = getTimes(provider);
     const {selectedDate1, selectedDate2} = getIntDates(provider);
 
@@ -478,12 +648,16 @@ date1.diff(date2) // 20214000000 default milliseconds
       startDate: _startDate,
       endDate: _endDate,
     });
+
+
     onDateSelected(_startDate, _endDate);
+
     if (closeOnSelect && this.enable_range && _endDate) {
       onClose();
     } else if (closeOnSelect && !this.enable_range) {
       onClose();
     }
+    */
   };
 
   render() {
@@ -494,15 +668,42 @@ date1.diff(date2) // 20214000000 default milliseconds
       showYearPopup,
       showTimePopup,
     } = this.state;
-    const {onClose = noHandler(), footer, selectTime} = this.props;
+    const {onClose = noHandler(), footer, showTime} = this.props;
     const prevMonth = getNewMonthFrom(date, -1);
     const nextMonth = getNewMonthFrom(date, 1);
     const currentMonth = getNewMonthFrom(date, 0);
     const {month, year} = getCustomDateObject(date);
 
-    console.log('this.props.provider==', this.props.provider);
+    const {
+      endDate,
+      startDate,
+    }=this.props.provider;
 
-    console.log('showTimePopup==',showTimePopup);
+
+
+
+    if(startDate){
+      console.log('startDate33===', dayjs(startDate._date).format('YYYY-MM-DD HH:mm:ss'));
+    }
+
+    if(endDate){
+
+      console.log('endDate44===', dayjs(endDate._date).format('YYYY-MM-DD HH:mm:ss'));
+
+    }
+
+    console.log('this.props.provider2222==', this.props.provider);
+
+
+
+    // console.log(
+    //   '_endDate2===',
+    //   dayjs(_endDate._date).format('YYYY-MM-DD HH:mm:ss')
+    // );
+
+
+
+    console.log('showTimePopup==', showTimePopup);
 
     return (
       <div className="full-date-picker-container">
@@ -525,18 +726,32 @@ date1.diff(date2) // 20214000000 default milliseconds
             />
 
             {/* 时间组件 */}
-            <TimePicker 
-            onClose={()=>{
+            <TimePicker
+              value={this.state[this.state.onChangeTimeKey]}
+              onChange={(time) => {
+                console.log('time==', time);
 
-            }}
-           open={showTimePopup}
+                const {onChangeTimeKey} = this.state;
 
-            // 
-            
-            
-            // visible={showTimePopup} onDone={this.onTimeSelected}
-            
-            
+                this.setState({
+                  [onChangeTimeKey]: time,
+                });
+
+                // startTime: dayjs(),
+                // endTime: dayjs(),
+                // startTime: dayjs(),
+                // endTime: dayjs(),
+
+                // onChangeTimeKey:'startTime',
+              }}
+              onClose={(time) => {
+                console.log('time==', time);
+              }}
+              open={showTimePopup}
+
+              //
+
+              // visible={showTimePopup} onDone={this.onTimeSelected}
             />
 
             {/*  */}
@@ -565,14 +780,19 @@ date1.diff(date2) // 20214000000 default milliseconds
           <Footer
             customFooter={footer}
             onToday={this.selectToday}
-            onClose={onClose}
+            onClose={()=>{
 
-            showTime={!!selectTime}
-
-            onShowTimePopup={()=>{
-
-       
-               this.showTime();
+              onClose(this.props.provider);
+            }}
+            showTime={!!showTime}
+            showTimePopup={showTimePopup}
+            onShowTimePopup={(flag, onChangeTimeKey) => {
+              if (flag) {
+                this.showTime(onChangeTimeKey);
+              } else {
+                this.closeTime();
+                this.onTimeSelected();
+              }
             }}
           />
         </div>
@@ -590,10 +810,6 @@ function getIntDates(provider) {
     // startTime,
     // endTime,
   } = provider;
-
-  // _initDate 是存放日期
-
-  console.log('startDate===', startDate);
   return {
     // 开始
     selectedDate1: provider.startDate ? provider.startDate._intDate : '',

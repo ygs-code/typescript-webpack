@@ -4,16 +4,24 @@ type Dates = {
   endDate: Date;
 };
 
-type DefaultValue = {
-  startDate: Date;
-  endDate?: Date;
-};
+// type DefaultValue = {
+//   startDate: Date;
+//   endDate?: Date;
+// };
+
+
+type DefaultValue = [
+  Date,
+  Date
+]
+ 
 
 type FooterParams = Dates & { close: Function; today: Function };
 
 export interface Props {
+  value?:DefaultValue,
   defaultValue?: DefaultValue;
-  selectTime?: boolean;
+  showTime?: boolean;
   onDateSelected?: Function;
   onClose?: Function;
   closeOnSelect?: boolean;
@@ -25,6 +33,7 @@ export interface Props {
   visible?: boolean;
   onOpen?: Function;
   closeOnOutsideClick?: boolean;
+  onChange?: Function;
 }
 
 export default class RangePicker extends React.Component<Props> {}

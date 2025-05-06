@@ -2,17 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Placeholder from './placeholder';
-import Calendar from './calendar';
+import {default as CalendarChild} from './calendar';
 import {Provider} from './context';
-
+import dayjs from 'dayjs';
 /*
   apis ==>
 
    onDateSelected (function)  - 'gets called when a date/range is selected and time selected',
    onClose (function) - 'when your pressed ok/select button in footer'
    disableRange (boolean) - 'if true user can select only one single'
-   selectTime (boolean) - if true time picker will show up each time a date gets selected
-   selectTime(boolean) - show time picker if true after very date selection
+   showTime (boolean) - if true time picker will show up each time a date gets selected
+   showTime(boolean) - show time picker if true after very date selection
 
    placeholder (function which return a React Component) - if user wants custom placeholder, placeholder function will recieve following object as param
       {startDate (date object),
@@ -27,7 +27,19 @@ import {Provider} from './context';
  */
 
 const hiddenStyle = {
-  top: '-150%'
+  top: '-150%',
+};
+
+// 把这个节点插入到 body 中
+const PortalCreator = (child) => {
+  let container = document.getElementById('__range-picker-container');
+
+  if (!container) {
+    container = document.createElement('div');
+    container.id = '__range-picker-container';
+    document.body.appendChild(container);
+  }
+  return ReactDOM.createPortal(child, container);
 };
 
 class RangePicker extends React.Component {
@@ -48,20 +60,17 @@ class RangePicker extends React.Component {
       // 日历是否显示
       showCalendar: false,
       // 日历位置样式
-      style: hiddenStyle
+      style: hiddenStyle,
     };
   }
 
   componentDidMount() {
-
-    
     const {current: popup} = this.popup_ref;
     // 监听鼠标点击事件，关闭日历
     // 关闭日历的条件是：点击的不是日历本身，并且日历是打开的状态
     // 鼠标按下事件
     // window.addEventListener('mousedown', this.handleOutsideClick, false);
 
-    
     // 鼠标移动事件
     // popup && popup.addEventListener('mousedown', this.preventBubbling, false);
 
@@ -82,7 +91,7 @@ class RangePicker extends React.Component {
     //   popup.removeEventListener('mousedown', this.preventBubbling, false);
   }
 
-  preventBubbling = e => {
+  preventBubbling = (e) => {
     e.stopPropagation();
   };
 
@@ -102,21 +111,21 @@ class RangePicker extends React.Component {
     // if user clicked outside of the calendar then hide it
     // 关闭日历
     this.setState({
-      showCalendar: false
+      showCalendar: false,
     });
 
     onClose && onClose();
   };
 
-   // 计算日历位置
-  calculateCalendarPosition = isVisible => {
+  // 计算日历位置
+  calculateCalendarPosition = (isVisible) => {
     const {current} = this.calendar_ref;
     if (!current || !isVisible) return hiddenStyle;
     const top = current.offsetTop;
     const left = current.offsetLeft;
     return {
       left,
-      top
+      top,
     };
   };
 
@@ -135,26 +144,27 @@ class RangePicker extends React.Component {
     let style = this.calculateCalendarPosition(!showCalendar);
     this.setState({
       showCalendar: !showCalendar,
-      style
+      style,
     });
   };
 
   // 关闭日历
-  onClose = () => {
-    const {onClose} = this.props;
+  onClose = (date) => {
+    const {startDate, endDate} = date;
+    const {onClose, onChange = () => {}} = this.props;
     this.toggleCalendar();
     onClose && onClose();
+    onChange([dayjs(startDate._date), dayjs(endDate._date)]);
   };
 
   // 选择日期
   onDateSelected = (startDate, endDate) => {
-
-
     // 选中日期
     const {onDateSelected} = this.props;
     const firstDate = startDate ? startDate._date : null;
     const lastDate = endDate ? endDate._date : null;
 
+    //
 
     onDateSelected && onDateSelected(firstDate, lastDate);
   };
@@ -172,26 +182,27 @@ class RangePicker extends React.Component {
           <div className="user-placeholder" onClick={this.toggleCalendar}>
             <Placeholder
               customPlaceholder={placeholder}
-              showTime={this.props.selectTime}
+              showTime={this.props.showTime}
               placeholder={placeholderText}
               format={dateFormat}
             />
           </div>
+
           {/* 日历 */}
           {PortalCreator(
             <div
               style={style}
               className={'calendar' + (visible ? ' visible' : '')}
-              ref={this.popup_ref}
-            >
-              <Calendar
+              ref={this.popup_ref}>
+              <CalendarChild
                 {...this.props}
                 // 选中日期
                 onDateSelected={this.onDateSelected}
-            
+                // onChange={this.onDateSelected}
+
                 // 日历是否显示
                 isVisible={visible}
-                 // 关闭日历
+                // 关闭日历
                 onClose={this.onClose}
               />
             </div>
@@ -202,15 +213,86 @@ class RangePicker extends React.Component {
   }
 }
 
-// 把这个节点插入到 body 中 
-const PortalCreator = child => {
-  let container = document.getElementById('__range-picker-container');
-  if (!container) {
-    container = document.createElement('div');
-    container.id = '__range-picker-container';
-    document.body.appendChild(container);
-  }
-  return ReactDOM.createPortal(child, container);
+const Calendar = (props) => {
+  const {
+    value = [],
+    visible,
+    onDateSelected = () => {},
+    onChange = () => {},
+    className = '',
+  } = props;
+
+  // 选择日期
+  const $onDateSelected = (startDate, endDate) => {
+    // 选中日期
+
+    const firstDate = startDate ? startDate._date : null;
+    const lastDate = endDate ? endDate._date : null;
+
+    //
+
+    onDateSelected && onDateSelected(firstDate, lastDate);
+  };
+
+  // 关闭日历
+  const onClose = (date) => {
+    const {startDate, endDate} = date;
+    onChange([dayjs(startDate._date), dayjs(endDate._date)]);
+  };
+
+  return (
+    <Provider>
+      <div
+        className={`date-picker-app-wrapper ${className}`}
+        // style={{
+        //   overflow: 'hidden',
+        // }}
+      >
+        {/* 日历 */}
+
+        <div
+          //  style={style}
+          className={'calendar' + (visible ? ' visible' : '')}>
+          <CalendarChild
+            {...props}
+            // 选中日期
+            onDateSelected={onDateSelected}
+            // onChange={this.onDateSelected}
+
+            // 日历是否显示
+            isVisible={visible}
+            // 关闭日历
+            onClose={onClose}
+          />
+        </div>
+      </div>
+    </Provider>
+  );
+
+  // (
+  //   <Provider>
+  //     <CalendarChild
+  //       {...props}
+  //       isVisible={visible}
+  //       onDateSelected={$onDateSelected}
+  //       // 关闭日历
+  //       onClose={onClose}
+  //     />
+  //   </Provider>
+  // );
+};
+
+const CalendarPicker = (props) => {
+  const {
+    visible
+  }=props;
+  return  visible?PortalCreator(
+    <div className="calendar-picker-box">
+      <Calendar {...props} className="calendar-picker-box-center" />
+    </div>
+  ):null;
 };
 
 export default RangePicker;
+
+export {Calendar, PortalCreator, CalendarPicker};

@@ -1,5 +1,43 @@
 @import url("./common.scss");
 
+
+.calendar-picker-box{
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    width: 100vh;
+    height: 100vh;
+    overflow: hidden;
+
+
+    &-center{
+         
+      position: fixed !important;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: auto;
+      overflow: visible;
+    }
+}
+
+/* 半透明黑色 */
+
+ 
+
+
+.calendar-picker-box::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+ 
+
 .date-picker-app-wrapper {
   display: inline-flex;
   flex-direction: column;
@@ -12,8 +50,7 @@
 #__range-picker-container {
   .calendar {
     background-color: white;
-    position: absolute;
-    top: 0;
+ 
     transform: scaleY(0);
     transition: transform 0.2s cubic-bezier(0.08, -0.03, 0.93, 0.32);
     transform-origin: top left;

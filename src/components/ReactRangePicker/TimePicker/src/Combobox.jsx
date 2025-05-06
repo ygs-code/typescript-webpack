@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import dayjs from 'dayjs';
 import Select from './Select';
 
 const formatOption = (option, disabledOptions) => {
@@ -29,37 +30,47 @@ class Combobox extends Component {
       onAmPmChange,
     } = this.props;
     const value = (propValue || defaultOpenValue).clone();
-
+    let now = new Date(value.format('YYYY-MM-DD HH:mm:ss'));
     if (type === 'hour') {
       if (use12Hours) {
         if (isAM) {
           value.hour(+itemValue % 12);
+          now.setHours(+itemValue % 12);
         } else {
           value.hour((+itemValue % 12) + 12);
+          now.setHours((+itemValue % 12) + 12);
         }
       } else {
         value.hour(+itemValue);
+        now.setHours(+itemValue);
+      
       }
     } else if (type === 'minute') {
       value.minute(+itemValue);
+      now.setMinutes(+itemValue);
     } else if (type === 'ampm') {
       const ampm = itemValue.toUpperCase();
       if (use12Hours) {
         if (ampm === 'PM' && value.hour() < 12) {
           value.hour((value.hour() % 12) + 12);
+          now.setHours((value.hour() % 12) + 12);
+
         }
 
         if (ampm === 'AM') {
           if (value.hour() >= 12) {
             value.hour(value.hour() - 12);
+            now.setHours(value.hour() - 12);
           }
         }
       }
       onAmPmChange(ampm);
     } else {
       value.second(+itemValue);
+      now.setSeconds(+itemValue);
     }
-    onChange(value);
+
+    onChange(dayjs(now));
   };
 
   onEnterSelectPanel = range => {
@@ -182,6 +193,15 @@ class Combobox extends Component {
   render() {
     const { prefixCls, defaultOpenValue, value: propValue } = this.props;
     const value = propValue || defaultOpenValue;
+
+
+    console.log('value===',value)
+    console.log('value.hour()===',value.hour())
+    console.log('value.minute()===',value.minute())
+    console.log('value.second()===',value.second())
+    console.log('value.hour()===',value.hour())
+    
+
     return (
       <div className={`${prefixCls}-combobox`}>
         {this.getHourSelect(value.hour())}

@@ -1,6 +1,32 @@
 @import url("./variable.scss");
 
+/*
 
+
+ 
+html {
+  width: 100px;
+
+  overflow: hidden;
+  background: darkblue;
+  height: 100vh;
+  display: block;
+}
+
+body {
+  width: 100px;
+  overflow: hidden;
+  background: red;
+  height: 100vh;
+}
+
+#root {
+  width: 100px;
+  overflow: hidden;
+  background: red;
+  height: 100vh;
+}
+*/
 .theme-color {
   color: $theme-color;
 }
@@ -40,12 +66,8 @@
   }
 }
 
-
-
 .ant-layout-sider {
-
   .ant-layout-sider-trigger {
-
     border-radius: 10px;
     background: white;
 

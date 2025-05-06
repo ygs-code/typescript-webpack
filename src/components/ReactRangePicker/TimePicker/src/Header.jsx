@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import moment from 'moment';
+// import moment from 'moment';
+import dayjs from 'dayjs';
 import classNames from 'classnames';
 
 class Header extends Component {
@@ -63,10 +64,21 @@ class Header extends Component {
       onChange,
     } = this.props;
 
+
+    console.log('str===',str)
     if (str) {
       const { value: originalValue } = this.props;
+
+      console.log('this.getProtoValue()==',this.getProtoValue())
+
+
       const value = this.getProtoValue().clone();
-      const parsed = moment(str, format, true);
+
+      // time: dayjs(new Date()).format("YYYY-MM-DD HH:mm:ss"),
+
+      const parsed = dayjs(str) .format(format)       // , format, true);
+
+
       if (!parsed.isValid()) {
         this.setState({
           invalid: true,

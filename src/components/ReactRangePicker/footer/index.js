@@ -11,19 +11,41 @@ const Footer = ({
   showTime = false,
   customFooter,
   provider,
-  onShowTimePopup =()=>{},
+  onShowTimePopup = () => {},
+  showTimePopup,
 }) => {
   // 开始时间和结束时间
   const {startDate, endDate} = provider;
 
-  if (customFooter) {
-    return customFooter({
-      today: onToday,
-      startDate: startDate ? startDate._date : undefined,
-      endDate: endDate ? endDate._date : undefined,
-      close: () => onClose(startDate, endDate),
-    });
+  // const {
+  //   endDate,
+  //   startDate,
+  // }=this.props.provider;
+
+  if (startDate) {
+    console.log(
+      'startDate66===',
+      dayjs(startDate._date).format('YYYY-MM-DD HH:mm:ss')
+    );
   }
+
+  if (endDate) {
+    console.log(
+      'endDate77===',
+      dayjs(endDate._date).format('YYYY-MM-DD HH:mm:ss')
+    );
+  }
+
+  console.log('provider=======', provider);
+
+  // if (customFooter) {
+  //   return customFooter({
+  //     today: onToday,
+  //     startDate: startDate ? startDate._date : undefined,
+  //     endDate: endDate ? endDate._date : undefined,
+  //     close: () => onClose(startDate, endDate),
+  //   });
+  // }
 
   // 开始日期
   let fDate = '',
@@ -36,28 +58,22 @@ const Footer = ({
 
   // 如果有开始时间
   if (startDate && startDate.customObject) {
-    const {
-      date,
-      monthNameShort,
-      year,
-      hours,
-      minutes,
-      period,
-      seconds,
-      _date,
-    } = startDate.customObject;
+    const {_date} = startDate;
+    const {date, monthNameShort, year, hours, minutes, period, seconds} =
+      startDate.customObject;
 
     fDate = dayjs(_date).format('YYYY-MM-DD');
 
     fDateTime = showTime ? hours + ':' + minutes + ':' + seconds : '';
+
+  
   }
 
   // 如果有结束时间
   if (endDate && endDate.customObject) {
-    const {date, monthNameShort, year, hours, minutes, period, seconds ,_date} =
+    const {_date} = endDate;
+    const {date, monthNameShort, year, hours, minutes, period, seconds} =
       endDate.customObject;
-    // lDate += date + ' ' + monthNameShort + ' ' + year;
-
     lDate = dayjs(_date).format('YYYY-MM-DD');
     lDateTime = showTime ? hours + ':' + minutes + ':' + seconds : '';
   }
@@ -77,17 +93,20 @@ const Footer = ({
                 heading={lDate ? 'From' : ''}
                 date={fDate}
                 time={fDateTime}
-                onShowTimePopup={onShowTimePopup}
+                onShowTimePopup={() => {
+                  onShowTimePopup(true, 'startTime');
+                }}
               />
             )}
             {/* 结束日期 */}
             {lDate && (
               <DateHolder
-                // extraClass="second"
                 heading="To"
                 date={lDate}
                 time={lDateTime}
-                onShowTimePopup={onShowTimePopup}
+                onShowTimePopup={() => {
+                  onShowTimePopup(true, 'endTime');
+                }}
               />
             )}
           </div>
@@ -97,7 +116,13 @@ const Footer = ({
       <Buttons
         disableSelect={!fDate && !lDate}
         onToday={onToday}
-        onClose={(e) => onClose(startDate, endDate)}
+        onClose={(e) => {
+          if (showTimePopup) {
+            onShowTimePopup(false);
+          } else {
+            onClose();
+          }
+        }}
       />
     </div>
   );
@@ -118,7 +143,13 @@ const Buttons = ({disableSelect, onToday, onClose}) => {
   );
 };
 
-const DateHolder = ({heading = '', date = '', time, extraClass = '' ,onShowTimePopup=()=>{}}) => {
+const DateHolder = ({
+  heading = '',
+  date = '',
+  time,
+  extraClass = '',
+  onShowTimePopup = () => {},
+}) => {
   console.log();
 
   return (
@@ -126,8 +157,11 @@ const DateHolder = ({heading = '', date = '', time, extraClass = '' ,onShowTimeP
       <div className="heading"> {heading} </div>
       <div className="date-box">
         {' '}
-        <span className="date btn btn-outline ripple" > {date} </span>{' '}
-        <span className="time btn btn-outline ripple" onClick={onShowTimePopup}> {time} </span>{' '}
+        <span className="date btn btn-outline ripple"> {date} </span>{' '}
+        <span className="time btn btn-outline ripple" onClick={onShowTimePopup}>
+          {' '}
+          {time}{' '}
+        </span>{' '}
       </div>
     </div>
   );

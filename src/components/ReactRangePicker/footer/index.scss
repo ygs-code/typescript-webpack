@@ -1,6 +1,5 @@
 #__range-picker-container{
   overflow: visible;
-  background: red;
 }
 .default-footer {
   height: auto;
@@ -41,7 +40,7 @@
       .date-box {
         font-weight: 500;
         margin-top: 7px;
-        font-size: 15px;
+        font-size: 14px;
     
         .date{
           cursor: pointer;
@@ -50,7 +49,7 @@
         }
         .time {
           font-weight: initial;
-          font-size: 15px;
+          font-size: 14px;
           cursor: pointer;
           display: inline-block;
         }

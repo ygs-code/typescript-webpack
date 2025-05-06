@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import Trigger from 'rc-trigger';
-import moment from 'moment';
+// import moment from 'moment';
+import dayjs from 'dayjs';
 import classNames from 'classnames';
 import Panel from './Panel';
 import placements from './placements';
@@ -24,7 +25,7 @@ class Picker extends Component {
     popupClassName: '',
     popupStyle: {},
     align: {},
-    defaultOpenValue: moment(),
+    defaultOpenValue: dayjs(),
     allowEmpty: true,
     showHour: true,
     showMinute: true,
@@ -326,7 +327,7 @@ class Picker extends Component {
         <div className='box'>
           {this.getPanelElement()}
 
-          <button class="select btn btn-outline ripple  select-but"> Select </button>
+          {/* <button class="select btn btn-outline ripple  select-but"> Select </button> */}
         </div>
 
         {/* <Trigger

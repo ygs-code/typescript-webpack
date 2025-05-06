@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import DatePicker from '@/components/ReactRangePicker';
+import DatePicker, { Calendar } from '@/components/ReactRangePicker';
+
+
+import { DatePicker as AnedDatePicker, Space } from 'antd';
+
+
 // import DatePicker from 'react-range-picker';
 import TimePicker from './TimePicker/src';
+import MobileReactRangePicker from './MobileReactRangePicker';
 import dayjs from 'dayjs';
 import './index.css';
 
@@ -67,12 +73,8 @@ class ControlledVisibility extends Component {
 
 class App extends Component {
   onDateSelect = (startDate, endDate) => {
- 
-
-
-    console.log('startDate==',dayjs(startDate).format('YYYY-MM-DD HH:mm:ss'))
-    console.log('endDate==', dayjs(endDate).format('YYYY-MM-DD HH:mm:ss'))
-
+    console.log('startDate==', dayjs(startDate).format('YYYY-MM-DD HH:mm:ss'));
+    console.log('endDate==', dayjs(endDate).format('YYYY-MM-DD HH:mm:ss'));
   };
 
   onClose = (startDate, endDate) => {
@@ -85,16 +87,25 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{ overflow: 'auto', height: '100vh' }}>
-        <div>
+      <div style={{   overflow: 'hidden', height: '100vh' ,    width: '100vw'}}>
+       <div>
+           <MobileReactRangePicker />
+         </div>  
+        {/* <div>
           <DatePicker
             onDateSelected={this.onDateSelect}
+            value={[dayjs('2025-01-05 00:00:00'), dayjs('2025-01-10 23:59:59')]}
             defaultValue={
               {
                 // startDate:    new Date('2020-01-05'),
                 // endDate: ''
               }
             }
+            onChange={([startDate, endDate]) => {
+              console.log('[startDate, endDate]==', startDate, endDate);
+
+             
+            }}
             onClose={this.onClose}
             onOpen={() => console.log(' openend')}
             // dateFormat="MMMM dd  YYYY @ h:mi A"
@@ -106,6 +117,21 @@ class App extends Component {
         </div>
 
         <br />
+
+        <div>
+          <Calendar
+            value={[dayjs('2025-01-05 00:00:00'), dayjs('2025-01-10 23:59:59')]}
+            visible={true}
+            showTime
+               dateFormat="DD-MM-YYYY h:miA"
+               selectTime
+            onChange={([startDate, endDate]) => {
+              console.log('[startDate, endDate]==', startDate, endDate);
+
+              
+            }}
+          />
+        </div>
 
         <div>
           <TimePicker />
@@ -161,7 +187,7 @@ class App extends Component {
             closeOnSelect
           />
         </div>
-        <br />
+        <br /> */}
         {/* <div>
             <h1> Controlled visibility </h1>
             <div 
